@@ -65,6 +65,15 @@ const page = () => {
         }
     }, [])
 
+    const scrollToTop = (e) => {
+        if(activeFilter) {
+            if(window.scrollY > 0) {
+                window.scrollTo({top: 0, behavior: 'smooth'})
+                console.log('working')
+            }
+        }
+    }
+
     useEffect(() => {
         if (!child1Ref.current) return;
 
@@ -146,33 +155,33 @@ const page = () => {
     return (
         <div className='w-full relative'>
             <Image src={containerBackground} alt='container background' width={1000} height={1000} className='w-full h-full absolute top-0 left-0' />
+            <div className="grid fixed left-1/2 -translate-x-1/2 top-[110px] z-40 md:w-[90%] md:grid-cols-4 grid-cols-2 gap-3 items-center md:my-0 my-10">
+                <div onClick={() => {setActiveFilter('fullmenu'); scrollToTop()}} className={`flex justify-between px-3 cursor-pointer relative items-center ${activeFilter === 'fullmenu' ? 'bg-[#fafafa]' : 'bg-white'} rounded-3xl py-2`}>
+                    <p className='mx-auto'>Full Menu</p>
+                    <div className={`w-[6px] h-[6px] rounded-full absolute right-3 bg-[#ff003c] ${activeFilter === 'fullmenu' ? 'block' : 'hidden'}`}></div>
+                </div>
+                <div onClick={() => {setActiveFilter('pizza'); scrollToTop()}} className={`flex justify-between px-3 cursor-pointer relative items-center ${activeFilter === 'pizza' ? 'bg-[#fafafa]' : 'bg-white'} rounded-3xl py-2`}>
+                    <Image src={pizza} alt='pizza' width={100} height={100} className='w-7 h-7' />
+                    <p className='mx-auto'>Pizza</p>
+                    <div className={`w-[6px] h-[6px] rounded-full absolute right-3 bg-[#ff003c] ${activeFilter === 'pizza' ? 'block' : 'hidden'}`}></div>
+                </div>
+                <div onClick={() => {setActiveFilter('sides'); scrollToTop()}} className={`flex justify-between px-3 cursor-pointer relative items-center ${activeFilter === 'sides' ? 'bg-[#fafafa]' : 'bg-white'} rounded-3xl py-2`}>
+                    <Image src={sides} alt='pizza' width={100} height={100} className='w-7 h-7' />
+                    <p className='mx-auto'>Sides</p>
+                    <div className={`w-[6px] h-[6px] rounded-full absolute right-3 bg-[#ff003c] ${activeFilter === 'sides' ? 'block' : 'hidden'}`}></div>
+                </div>
+                <div onClick={() => {setActiveFilter('drinks'); scrollToTop()}} className={`flex justify-between px-3 cursor-pointer relative items-center ${activeFilter === 'drinks' ? 'bg-[#fafafa]' : 'bg-white'} rounded-3xl py-2`}>
+                    <Image src={drinks} alt='pizza' width={100} height={100} className='w-7 h-7' />
+                    <p className='mx-auto'>Drinks</p>
+                    <div className={`w-[6px] h-[6px] rounded-full absolute right-3 bg-[#ff003c] ${activeFilter === 'drinks' ? 'block' : 'hidden'}`}></div>
+                </div>
+            </div>
             <div ref={containerRef} className="md:p-20 p-5 md:py-32 pt-32 relative backdrop-blur-xl flex flex-col md:gap-10 gap-5">
                 <Image ref={child2Ref} src={leaf} width={1000} height={1000} alt='leaf' className='md:w-[10%] w-[20%] reloadAnimation1 md:right-[50%] right-[50%] top-[2%] opacity-0 scale-50 absolute' />
                 <Image ref={child1Ref} src={tomato} width={1000} height={1000} alt='leaf' className='md:w-[10%] w-[20%] reloadAnimation right-[5%] md:top-[0.6%] top-[0.2%] opacity-0 scale-50 absolute' />
                 <div className="md:w-[80%] mb-5">
                     <h1 className="text-2xl md:text-8xl font-bold leading-normal md:leading-snug">Our Menu</h1>
                     <p className="md:text-xl text-sm">From savory pizzas to refreshing drinks, we take pride in serving dishes that are made with care. Every meal is thoughtfully prepared to give you a culinary experience worth remembering.</p>
-                </div>
-                <div className="grid md:grid-cols-4 grid-cols-2 gap-3 items-center md:my-0 my-10">
-                    <div onClick={() => setActiveFilter('fullmenu')} className={`flex justify-between px-3 cursor-pointer relative items-center ${activeFilter === 'fullmenu' ? 'bg-[#fafafa]' : 'bg-white'} rounded-3xl py-2`}>
-                        <p className='mx-auto'>Full Menu</p>
-                        <div className={`w-[6px] h-[6px] rounded-full absolute right-3 bg-[#ff003c] ${activeFilter === 'fullmenu' ? 'block' : 'hidden'}`}></div>
-                    </div>
-                    <div onClick={() => setActiveFilter('pizza')} className={`flex justify-between px-3 cursor-pointer relative items-center ${activeFilter === 'pizza' ? 'bg-[#fafafa]' : 'bg-white'} rounded-3xl py-2`}>
-                        <Image src={pizza} alt='pizza' width={100} height={100} className='w-7 h-7' />
-                        <p className='mx-auto'>Pizza</p>
-                        <div className={`w-[6px] h-[6px] rounded-full absolute right-3 bg-[#ff003c] ${activeFilter === 'pizza' ? 'block' : 'hidden'}`}></div>
-                    </div>
-                    <div onClick={() => setActiveFilter('sides')} className={`flex justify-between px-3 cursor-pointer relative items-center ${activeFilter === 'sides' ? 'bg-[#fafafa]' : 'bg-white'} rounded-3xl py-2`}>
-                        <Image src={sides} alt='pizza' width={100} height={100} className='w-7 h-7' />
-                        <p className='mx-auto'>Sides</p>
-                        <div className={`w-[6px] h-[6px] rounded-full absolute right-3 bg-[#ff003c] ${activeFilter === 'sides' ? 'block' : 'hidden'}`}></div>
-                    </div>
-                    <div onClick={() => setActiveFilter('drinks')} className={`flex justify-between px-3 cursor-pointer relative items-center ${activeFilter === 'drinks' ? 'bg-[#fafafa]' : 'bg-white'} rounded-3xl py-2`}>
-                        <Image src={drinks} alt='pizza' width={100} height={100} className='w-7 h-7' />
-                        <p className='mx-auto'>Drinks</p>
-                        <div className={`w-[6px] h-[6px] rounded-full absolute right-3 bg-[#ff003c] ${activeFilter === 'drinks' ? 'block' : 'hidden'}`}></div>
-                    </div>
                 </div>
                 {activeFilter === 'fullmenu' ? (
                     <>
@@ -217,7 +226,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl"><span className="text-sm text-gray-400 font-extralight">from</span> ₦3,500</h3>
                                     </div>
                                 </div>
@@ -262,7 +271,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl flex-shrink-0">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl flex-shrink-0">Order Now</button>
                                         <h3 className="font-semibold text-3xl"><span className="text-sm text-gray-400 font-extralight">from</span> ₦25,800</h3>
                                     </div>
                                 </div>
@@ -307,7 +316,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl"><span className="text-sm text-gray-400 font-extralight">from</span> ₦15,800</h3>
                                     </div>
                                 </div>
@@ -350,7 +359,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 px-8 flex-shrink-0 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦2,000</h3>
                                     </div>
                                 </div>
@@ -401,7 +410,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl"><span className="text-sm text-gray-400 font-extralight">from</span> ₦1,800</h3>
                                     </div>
                                 </div>
@@ -446,7 +455,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl"><span className="text-sm text-gray-400 font-extralight">from</span> ₦4,000</h3>
                                     </div>
                                 </div>
@@ -491,7 +500,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦6,500 <span className="text text-gray-300 text-sm">/ 1 Chicken</span></h3>
                                     </div>
                                 </div>
@@ -532,7 +541,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦1,200 <span className="text text-gray-300 text-sm">/ 1 Drumsticks</span></h3>
                                     </div>
                                 </div>
@@ -577,7 +586,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦1,500 <span className="text text-gray-300 text-sm">1</span></h3>
                                     </div>
                                 </div>
@@ -618,7 +627,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦1,500 <span className="text text-gray-300 text-sm">1</span></h3>
                                     </div>
                                 </div>
@@ -663,7 +672,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦3,000 <span className="text text-gray-300 text-sm"> / ft</span></h3>
                                     </div>
                                 </div>
@@ -704,7 +713,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦1,000 <span className="text text-gray-300 text-sm"> 1</span></h3>
                                     </div>
                                 </div>
@@ -749,7 +758,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦2,300 <span className="text text-gray-300 text-sm"> 1</span></h3>
                                     </div>
                                 </div>
@@ -794,7 +803,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦3,500 <span className="text text-gray-300 text-sm"> 1</span></h3>
                                     </div>
                                 </div>
@@ -838,8 +847,8 @@ const page = () => {
                                             <p className='text-[12px]'>Dairy (blue cheese dip)</p>
                                         </div>
                                     </div>
-                                    <div className="flex justify-between">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                    <div className="flex justify-between items-center">
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦2,500 <span className="text text-gray-300 text-sm">/ 2</span></h3>
                                     </div>
                                 </div>
@@ -884,7 +893,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 px-8 flex-shrink-0 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦12,500 <span className="text text-gray-300 text-sm">6</span></h3>
                                     </div>
                                 </div>
@@ -929,7 +938,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦16,500 <span className="text text-gray-300 text-sm">6</span></h3>
                                     </div>
                                 </div>
@@ -974,7 +983,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦2,500 <span className="text text-gray-300 text-sm">1</span></h3>
                                     </div>
                                 </div>
@@ -1019,7 +1028,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦3,500 <span className="text text-gray-300 text-sm">1</span></h3>
                                     </div>
                                 </div>
@@ -1064,7 +1073,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦8,800 <span className="text text-gray-300 text-sm">2</span></h3>
                                     </div>
                                 </div>
@@ -1109,7 +1118,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 px-8 flex-shrink-0 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦3,500 <span className="text text-gray-300 text-sm">1</span></h3>
                                     </div>
                                 </div>
@@ -1156,7 +1165,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦1,800 <span className="text text-gray-300 text-sm">/1</span></h3>
                                     </div>
                                 </div>
@@ -1201,7 +1210,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦2,800 <span className="text text-gray-300 text-sm">1L</span></h3>
                                     </div>
                                 </div>
@@ -1246,7 +1255,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦2,800 <span className="text text-gray-300 text-sm">1L</span></h3>
                                     </div>
                                 </div>
@@ -1291,7 +1300,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦2,800 <span className="text text-gray-300 text-sm">1L</span></h3>
                                     </div>
                                 </div>
@@ -1336,7 +1345,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦2,000 <span className="text text-gray-300 text-sm">1L</span></h3>
                                     </div>
                                 </div>
@@ -1381,7 +1390,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦6,800 <span className="text text-gray-300 text-sm">1L</span></h3>
                                     </div>
                                 </div>
@@ -1426,7 +1435,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦2,800 <span className="text text-gray-300 text-sm">1L</span></h3>
                                     </div>
                                 </div>
@@ -1471,7 +1480,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦2,800 <span className="text text-gray-300 text-sm">1L</span></h3>
                                     </div>
                                 </div>
@@ -1516,7 +1525,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦2,800 <span className="text text-gray-300 text-sm">1L</span></h3>
                                     </div>
                                 </div>
@@ -1561,7 +1570,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦1,500 <span className="text text-gray-300 text-sm">1L</span></h3>
                                     </div>
                                 </div>
@@ -1602,7 +1611,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦2,500 <span className="text text-gray-300 text-sm">1</span></h3>
                                     </div>
                                 </div>
@@ -1647,7 +1656,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦2,800 <span className="text text-gray-300 text-sm">1</span></h3>
                                     </div>
                                 </div>
@@ -1697,7 +1706,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl"><span className="text-sm text-gray-400 font-extralight">from</span> ₦3,500</h3>
                                     </div>
                                 </div>
@@ -1742,7 +1751,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl flex-shrink-0">Order Now</button>
+                                        <button className="py-2 p flex-shrink-0x-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl flex-shrink-0">Order Now</button>
                                         <h3 className="font-semibold text-3xl"><span className="text-sm text-gray-400 font-extralight">from</span> ₦25,800</h3>
                                     </div>
                                 </div>
@@ -1787,7 +1796,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl"><span className="text-sm text-gray-400 font-extralight">from</span> ₦15,800</h3>
                                     </div>
                                 </div>
@@ -1841,7 +1850,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl"><span className="text-sm text-gray-400 font-extralight">from</span> ₦1,800</h3>
                                     </div>
                                 </div>
@@ -1886,7 +1895,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl"><span className="text-sm text-gray-400 font-extralight">from</span> ₦4,000</h3>
                                     </div>
                                 </div>
@@ -1931,7 +1940,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦6,500 <span className="text text-gray-300 text-sm">/ 1 Chicken</span></h3>
                                     </div>
                                 </div>
@@ -1972,7 +1981,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦1,200 <span className="text text-gray-300 text-sm">/ 1 Drumsticks</span></h3>
                                     </div>
                                 </div>
@@ -2017,7 +2026,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦1,500 <span className="text text-gray-300 text-sm">1</span></h3>
                                     </div>
                                 </div>
@@ -2058,7 +2067,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦1,500 <span className="text text-gray-300 text-sm">1</span></h3>
                                     </div>
                                 </div>
@@ -2103,7 +2112,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦3,000 <span className="text text-gray-300 text-sm"> / ft</span></h3>
                                     </div>
                                 </div>
@@ -2144,7 +2153,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦1,000 <span className="text text-gray-300 text-sm"> 1</span></h3>
                                     </div>
                                 </div>
@@ -2189,7 +2198,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦2,300 <span className="text text-gray-300 text-sm"> 1</span></h3>
                                     </div>
                                 </div>
@@ -2234,7 +2243,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦3,500 <span className="text text-gray-300 text-sm"> 1</span></h3>
                                     </div>
                                 </div>
@@ -2279,7 +2288,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦2,500 <span className="text text-gray-300 text-sm">/ 2</span></h3>
                                     </div>
                                 </div>
@@ -2324,7 +2333,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦12,500 <span className="text text-gray-300 text-sm">6</span></h3>
                                     </div>
                                 </div>
@@ -2369,7 +2378,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦16,500 <span className="text text-gray-300 text-sm">6</span></h3>
                                     </div>
                                 </div>
@@ -2414,7 +2423,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦2,500 <span className="text text-gray-300 text-sm">1</span></h3>
                                     </div>
                                 </div>
@@ -2459,7 +2468,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦3,500 <span className="text text-gray-300 text-sm">1</span></h3>
                                     </div>
                                 </div>
@@ -2504,7 +2513,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦8,800 <span className="text text-gray-300 text-sm">2</span></h3>
                                     </div>
                                 </div>
@@ -2549,7 +2558,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦3,500 <span className="text text-gray-300 text-sm">1</span></h3>
                                     </div>
                                 </div>
@@ -2599,7 +2608,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦1,800 <span className="text text-gray-300 text-sm">/1</span></h3>
                                     </div>
                                 </div>
@@ -2644,7 +2653,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦2,800 <span className="text text-gray-300 text-sm">1L</span></h3>
                                     </div>
                                 </div>
@@ -2689,7 +2698,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦2,800 <span className="text text-gray-300 text-sm">1L</span></h3>
                                     </div>
                                 </div>
@@ -2734,7 +2743,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦2,800 <span className="text text-gray-300 text-sm">1L</span></h3>
                                     </div>
                                 </div>
@@ -2779,7 +2788,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦2,000 <span className="text text-gray-300 text-sm">1L</span></h3>
                                     </div>
                                 </div>
@@ -2824,7 +2833,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦6,800 <span className="text text-gray-300 text-sm">1L</span></h3>
                                     </div>
                                 </div>
@@ -2869,7 +2878,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦2,800 <span className="text text-gray-300 text-sm">1L</span></h3>
                                     </div>
                                 </div>
@@ -2914,7 +2923,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦2,800 <span className="text text-gray-300 text-sm">1L</span></h3>
                                     </div>
                                 </div>
@@ -2959,7 +2968,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦2,800 <span className="text text-gray-300 text-sm">1L</span></h3>
                                     </div>
                                 </div>
@@ -3004,7 +3013,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦1,500 <span className="text text-gray-300 text-sm">1L</span></h3>
                                     </div>
                                 </div>
@@ -3045,7 +3054,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦2,500 <span className="text text-gray-300 text-sm">1</span></h3>
                                     </div>
                                 </div>
@@ -3090,7 +3099,7 @@ const page = () => {
                                         </div>
                                     </div>
                                     <div className="flex justify-between items-center">
-                                        <button className="py-2 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                        <button className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
                                         <h3 className="font-semibold text-3xl">₦2,800 <span className="text text-gray-300 text-sm">1</span></h3>
                                     </div>
                                 </div>

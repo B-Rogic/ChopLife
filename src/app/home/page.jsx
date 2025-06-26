@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { gsap } from 'gsap'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 import {ScrollTrigger} from 'gsap/ScrollTrigger'
+import Link from 'next/link'
 import CardComponent from '../components/CardComponent'
 import CardComponent2 from '../components/CardComponent2'
 import AccordionComponent from '../components/AccordionComponent'
@@ -584,7 +585,6 @@ const page = () => {
         <Image src={carrot} width={1000} height={1000} alt='leaf' className='absolute md:block hidden movedown reloadmovedown1 top-[-20%] scale-50 -rotate-[60deg] left-[20%] w-[3%]' />
         <Image ref={translateYRef2} src={chicken} width={1000} height={1000} alt='leaf' className='absolute md:block hidden reloadmovedown8 moveup top-[90%] rotate-[30deg] scale-50 left-32 w-[20%]' />
         <Image ref={translateYRef1} src={leaf2} width={1000} height={1000} alt='leaf' className='absolute md:block hidden moveup bottom-[-25%] reloadmovedown5 right-[2%] w-[12%]' />
-        <Image ref={translateYRef} src={onion} width={1000} height={1000} alt='leaf' className='absolute md:block hidden reloadmovedown6 bottom-[-20%] right-[18%] w-[10%]' />
         <Image src={pepper} width={1000} height={1000} alt='leaf' className='absolute movedown md:block hidden reloadmovedown2 top-[-10%] scale-50 right-[15%] z-10 w-[15%] h-40' />
         <Image src={pepper} width={1000} height={1000} alt='leaf' className='absolute md:hidden block movedown reloadmovedownmobile3 top-[-10%] scale-50 right-[15%] z-10 w-[15%]' />
         <Image ref={translateYRef3} src={carrot} width={1000} height={1000} alt='leaf' className='absolute md:block hidden reloadmovedown3 moveup top-[50%] right-[-10%] -rotate-[25deg] w-[6%]' />
@@ -593,8 +593,10 @@ const page = () => {
         <div className="flex justify-center flex-col md:gap-0 gap-3 items-center reloadscale scale-50">
           <h1 className='md:text-[5rem] text-[3rem] font-bold text-[#ff003c] md:leading-[4rem] leading-[2rem]'>Chop Life <span className='text-[#1a1a1a]'>O...</span></h1>
           <h1 className='md:text-[5rem] text-[2.5rem] font-bold text-[#1a1a1a]'>You Deserve it!</h1>
-          <p className="md:text-xl mb-5 md:w-1/2 text-center text-[#6e6e6e]">Delicious meals made with love and spice - from spicy noodles to juicy shawarma and crispy yam chips. Order now, we deliver fast!</p>
-          <button className='bg-[#ff003c] hover:scale-[1.05] transition-transform duration-200 ease-in-out rounded-3xl py-2 px-8 text-xl text-white'>View Our Menu</button>
+          <p className="md:text-lg mb-5 md:w-[60%] text-center text-[#6e6e6e]">Delicious meals made with love and spice - from spicy noodles to juicy shawarma and crispy yam chips. Order now, we deliver fast!</p>
+          <Link href={`/home/menu`}>
+            <button className='bg-[#ff003c] hover:scale-[1.05] transition-transform duration-200 ease-in-out rounded-3xl py-2 px-8 text-xl text-white'>View Our Menu</button>
+          </Link>
         </div>
         </div>
       </div>
@@ -604,12 +606,14 @@ const page = () => {
           <div className="grid md:grid-cols-3 md:gap-5">
             <CardComponent src={firstCardImage} title='Spicy Noodles' description='Hot, steamy noodles toosed in a flowerful pepper blend.' order='Order Now' amount='N1,800.00' />
             <CardComponent src={secondCardImage} title={`Chicken Shawarma`} description={`Packed with juicy fillings, sauces, and grilled perfection.`} order={`Order Now`} amount={`N2,500.00`} />
-            <CardComponent src={thirdCardImage} title={`Chicken and Chips`} description={`Choice of wings or drumsticks with cripsy yam chips.`} order={`Order Now`} amount={`N3,500.00`} />
+            <CardComponent src={thirdCardImage} title={`Chicken and Chips`} description={`Choice of wings or drumsticks with cripsy yam and potatoes chips.`} order={`Order Now`} amount={`N3,500.00`} />
           </div>
         </div>
-        <div className="flex justify-center w-full">
-          <button className="bg-[#1a1a1a] hover:bg-[#ff003c] hover:scale-[1.01] transition-all duration-200 rounded-3xl mx-auto py-3 px-8 text-xl text-white font-semibold mb-20">View full menu</button>
-        </div>
+        <Link href={`/home/menu`}>
+          <div className="flex justify-center w-full">
+            <button className="bg-[#1a1a1a] hover:bg-[#ff003c] hover:scale-[1.01] transition-all duration-200 rounded-3xl mx-auto py-3 px-8 text-xl text-white font-semibold mb-20">View full menu</button>
+          </div>
+        </Link>
         <div className="flex flex-col gap-10">
           <h1 className="md:text-5xl text-3xl md:px-0 px-[60px] font-bold text-center">Hot Food, Hotter Deals</h1>
           <p className="text-xl font-light text-center">Our meals are made fresh daily with quality ingredients, generous portions, and unbeatble flavor.</p>

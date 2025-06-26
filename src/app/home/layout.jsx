@@ -100,10 +100,10 @@ const layout = ({children}) => {
               <Image src={chopLifeLogo} width={1000} height={1000} alt='chop life logo' className='w-[25%] h-[25%]' />
               <p className="text-white text-sm">No. 46 Oroigwe Road, Obio Akpor, Rivers State.</p>
               <p className="text-white text-sm">info@chop-life.com</p>
-              <div className="flex flex-col gap-2">
-                <p className="text-white font-bold">Monday - Friday <span className='font-normal'>9 AM - 10 PM</span></p>
-                <p className="text-white font-bold">Saturday <span className='font-normal'>10 AM - 11 PM</span></p>
-                <p className="text-white font-bold">Sunday <span className='font-normal'>12 PM - 11 PM</span></p>
+              <div className="flex flex-col gap-1">
+                <p className="text-white font-semibold leading-[12px]">Monday - Friday <span className='font-normal'>9 AM - 10 PM</span></p>
+                <p className="text-white font-semibold leading-[12px]">Saturday <span className='font-normal'>10 AM - 11 PM</span></p>
+                <p className="text-white font-semibold leading-[12px]">Sunday <span className='font-normal'>12 PM - 11 PM</span></p>
               </div>
             </div>
             <div className="flex flex-col md:gap-4 gap-3 flex-shrink-0 md:my-0 mt-10">

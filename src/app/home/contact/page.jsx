@@ -52,21 +52,23 @@ const page = () => {
                     </div>
                     <div className="flex flex-col items-start gap-7">
                         <p className="text-2xl">Write Us a Message</p>
-                        <label htmlFor="name" className='w-full'>
-                            <input className='w-full py-3 px-5 rounded-3xl border-none outline-none' type="text" name="name" id="name" placeholder='Full Name' />
-                        </label>
-                        <div className="flex gap-5 items-center w-full">
+                        <form action="https://formsubmit.co/emmanueltech2019.com" className='flex flex-col items-start gap-7' method='POST'>
                             <label htmlFor="name" className='w-full'>
-                                <input className='w-full py-3 px-5 rounded-3xl border-none outline-none' type="text" name="name" id="name" placeholder='youremail@email.com' />
+                                <input required className='w-full py-3 px-5 rounded-3xl border-none outline-none' type="text" name="name" id="name" placeholder='Full Name' />
                             </label>
-                            <label htmlFor="name" className='w-full'>
-                                <input className='w-full py-3 px-5 rounded-3xl border-none outline-none' type="text" name="name" id="name" placeholder='+01 000 999 555' />
+                            <div className="flex gap-5 items-center w-full">
+                                <label htmlFor="email" className='w-full'>
+                                    <input required className='w-full py-3 px-5 rounded-3xl border-none outline-none' type="email" name="email" id="email" placeholder='youremail@email.com' />
+                                </label>
+                                <label htmlFor="tel" className='w-full'>
+                                    <input required className='w-full py-3 px-5 rounded-3xl border-none outline-none' type="tel" name="tel" id="tel" placeholder='+01 000 999 555' />
+                                </label>
+                            </div>
+                            <label htmlFor="message" className='w-full'>
+                                <textarea required rows={10} name="message" id="message" className='w-full p-4 border-none outline-none rounded-3xl bg-white' placeholder='Type your message' ></textarea>
                             </label>
-                        </div>
-                        <label htmlFor="message" className='w-full'>
-                            <textarea rows={10} name="message" id="message" className='w-full p-4 border-none outline-none rounded-3xl bg-white' placeholder='Type your message' ></textarea>
-                        </label>
-                        <button className='py-3 px-10 text-white hover:shadow-lg bg-[#ff003c] rounded-3xl'>Send Message</button>
+                            <button className='py-3 px-10 text-white hover:shadow-lg bg-[#ff003c] rounded-3xl'>Send Message</button>
+                        </form>
                     </div>
                 </div>
                 <div className="grid md:grid-cols-5 grid-cols-2 items-start gap-3">
