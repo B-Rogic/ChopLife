@@ -155,7 +155,7 @@ const page = () => {
     return (
         <div className='w-full relative'>
             <Image src={containerBackground} alt='container background' width={1000} height={1000} className='w-full h-full absolute top-0 left-0' />
-            <div className="grid fixed left-1/2 -translate-x-1/2 top-[110px] z-40 md:w-[90%] md:grid-cols-4 grid-cols-2 gap-3 items-center md:my-0 my-10">
+            <div className="grid fixed left-1/2 -translate-x-1/2 top-[110px] z-40 md:w-[90%] w-full md:grid-cols-4 grid-cols-2 gap-3 items-center md:my-0 my-10">
                 <div onClick={() => {setActiveFilter('fullmenu'); scrollToTop()}} className={`flex justify-between px-3 cursor-pointer relative items-center ${activeFilter === 'fullmenu' ? 'bg-[#fafafa]' : 'bg-white'} rounded-3xl py-2`}>
                     <p className='mx-auto'>Full Menu</p>
                     <div className={`w-[6px] h-[6px] rounded-full absolute right-3 bg-[#ff003c] ${activeFilter === 'fullmenu' ? 'block' : 'hidden'}`}></div>
@@ -176,7 +176,7 @@ const page = () => {
                     <div className={`w-[6px] h-[6px] rounded-full absolute right-3 bg-[#ff003c] ${activeFilter === 'drinks' ? 'block' : 'hidden'}`}></div>
                 </div>
             </div>
-            <div ref={containerRef} className="md:p-20 p-5 md:py-32 pt-32 relative backdrop-blur-xl flex flex-col md:gap-10 gap-5">
+            <div ref={containerRef} className="md:p-20 p-5 md:py-32 md:pt-32 pt-72 relative backdrop-blur-xl flex flex-col md:gap-10 gap-5">
                 <Image ref={child2Ref} src={leaf} width={1000} height={1000} alt='leaf' className='md:w-[10%] w-[20%] reloadAnimation1 md:right-[50%] right-[50%] top-[2%] opacity-0 scale-50 absolute' />
                 <Image ref={child1Ref} src={tomato} width={1000} height={1000} alt='leaf' className='md:w-[10%] w-[20%] reloadAnimation right-[5%] md:top-[0.6%] top-[0.2%] opacity-0 scale-50 absolute' />
                 <div className="md:w-[80%] mb-5">
