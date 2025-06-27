@@ -155,7 +155,7 @@ const page = () => {
     return (
         <div className='w-full relative'>
             <Image src={containerBackground} alt='container background' width={1000} height={1000} className='w-full h-full absolute top-0 left-0' />
-            <div className="grid fixed left-1/2 -translate-x-1/2 top-[110px] z-40 md:w-[90%] w-full md:grid-cols-4 grid-cols-2 gap-3 items-center md:my-0 my-10">
+            <div className="grid fixed left-1/2 -translate-x-1/2 top-[110px] z-20 md:w-[90%] w-full md:grid-cols-4 grid-cols-2 gap-3 items-center md:my-0 my-10">
                 <div onClick={() => {setActiveFilter('fullmenu'); scrollToTop()}} className={`flex justify-between px-3 cursor-pointer relative items-center ${activeFilter === 'fullmenu' ? 'bg-[#fafafa]' : 'bg-white'} rounded-3xl py-2`}>
                     <p className='mx-auto'>Full Menu</p>
                     <div className={`w-[6px] h-[6px] rounded-full absolute right-3 bg-[#ff003c] ${activeFilter === 'fullmenu' ? 'block' : 'hidden'}`}></div>
