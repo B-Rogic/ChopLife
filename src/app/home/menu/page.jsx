@@ -46,6 +46,7 @@ import naijaSunrise from '@/images/naijaSunrise.jpg'
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
+
 const page = () => {
     const [activeFilter, setActiveFilter] = useState('fullmenu');
     const containerRef = useRef(null);

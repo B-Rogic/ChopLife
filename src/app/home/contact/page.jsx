@@ -44,15 +44,15 @@ const page = () => {
                     <div>
                         <p className="text-xl font-semibold mb-5">Addresses</p>
                         <div className="flex flex-col gap-3">
-                            <p className="font-bold text-sm">Obia Akpor:</p>
-                            <p className="text-sm">46, Oroigwe Rd, Obio Akpor, Rivers <br /> 500102</p>
-                            <p className="text-gray-400 font-semibold text-sm">info@chop-life.com</p>
-                            <p className="text-gray-400 font-semibold text-sm">+234 815 4610 235</p>
+                            <p className="font-bold md:text-lg text-sm">Obia Akpor:</p>
+                            <p className="md:text-lg text-sm">46, Oroigwe Rd, Obio Akpor, Rivers <br /> 500102</p>
+                            <p className="text-gray-400 font-semibold md:text-lg text-sm">info@chop-life.com</p>
+                            <p className="text-gray-400 font-semibold md:text-lg text-sm">+234 815 4610 235</p>
                         </div>
                     </div>
                     <div className="flex flex-col items-start gap-7">
                         <p className="text-2xl">Write Us a Message</p>
-                        <form action="https://formsubmit.co/emmanueltech2019.com" className='flex flex-col items-start gap-7' method='POST'>
+                        <form action="https://formsubmit.co/info@chop-life.com" className='flex flex-col items-start gap-7' method='POST'>
                             <label htmlFor="name" className='w-full'>
                                 <input required className='w-full py-3 px-5 rounded-3xl border-none outline-none' type="text" name="name" id="name" placeholder='Full Name' />
                             </label>
@@ -61,7 +61,7 @@ const page = () => {
                                     <input required className='w-full py-3 px-5 rounded-3xl border-none outline-none' type="email" name="email" id="email" placeholder='youremail@email.com' />
                                 </label>
                                 <label htmlFor="tel" className='w-full'>
-                                    <input required className='w-full py-3 px-5 rounded-3xl border-none outline-none' type="tel" name="tel" id="tel" placeholder='+01 000 999 555' />
+                                    <input required className='w-full py-3 px-5 rounded-3xl border-none outline-none' type="tel" name="tel" id="tel" placeholder='+234 000 0000 000' />
                                 </label>
                             </div>
                             <label htmlFor="message" className='w-full'>

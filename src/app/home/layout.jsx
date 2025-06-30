@@ -51,7 +51,9 @@ const layout = ({children}) => {
   return (
     <>
         <div className={`justify-between items-center w-full md:px-20 p-3 px-5 top-0 left-0 z-40 fixed bg-white text-[#1a1a1a] ${pathname === '/home/contact/portharcourt' ? 'hidden' : 'flex'}`}>
-          <Image src={chopLifeLogo} width={1000} height={1000} alt='chop life logo' className='md:w-[10%] md:h-[10%] w-[30%] h-[30%] ' />
+          <Link href={`/home`} className='flex-shrink-0 md:w-[10%] md:h-[10%] w-[30%] h-[30%] '>
+            <Image src={chopLifeLogo} width={1000} height={1000} alt='chop life logo' className='w-full' />
+          </Link>
           <div ref={navRef} className={`flex items-center md:flex-row flex-col md:relative fixed md:top-0 left-0 top-[70px] gap-10 md:gap-20 w-full md:overflow-visible bg-white z-52 overflow-hidden transition-all duration-200 ease-in-out md:w-auto bg-red ${navActive ? 'h-full p-20' : 'h-0 p-0'}`} >
             <Link onClick={() => setNavActive(false)} href={`/home`} className='text-md md:p-0  text-gray-700 font-semibold group transition-all duration-1000 ease-in-out relative'>
               <div className="w-3 left-1/2 -translate-x-1/2 group-hover:translate-y-4 group-hover:translate-x-10 transition-transform duration-300 ease-in-out h-3  absolute rounded-full bg-[#ff003c]"></div>
@@ -97,7 +99,9 @@ const layout = ({children}) => {
         <div className={`flex flex-col gap-10 bg-[#ff003c]  md:p-20 p-5 ${pathname === '/home/contact/portharcourt' ? 'hidden' : 'flex'}`}>
           <div className="grid md:grid-cols-5 grid-cols-1">
             <div className="flex flex-col gap-4 flex-shrink-0 md:col-span-2">
-              <Image src={chopLifeLogo} width={1000} height={1000} alt='chop life logo' className='w-[25%] h-[25%]' />
+              <Link href={`/home`}>
+                <Image src={chopLifeLogo} width={1000} height={1000} alt='chop life logo' className='w-[25%] ' />
+              </Link>
               <p className="text-white text-sm">No. 46 Oroigwe Road, Obio Akpor, Rivers State.</p>
               <p className="text-white text-sm">info@chop-life.com</p>
               <div className="flex flex-col gap-1">

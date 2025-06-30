@@ -17,7 +17,10 @@ const CardComponent2 = forwardRef(({black = false, title = '', src, description 
           </div>
         </ul>
         <div className="flex items-center gap-5 relative z-10">
-            <button className="py-2 md:px-8 px-3 flex-shrink-0 text-[#1a1a1a] bg-white hover:scale-[1.01] transition-all duration-200 rounded-3xl">{order}</button>
+            <button className="py-2 opacity-20 hover:scale-[1.01] transition-all cursor-not-allowed duration-200 group px-8 bg-[#fff] text-[#1a1a1a] rounded-3xl relative">
+              {order}
+              <div className="absolute -bottom-2 group-hover:-bottom-5 text-[10px] p-[1px] px-2 rounded-3xl flex justify-center items-center w-5 h-5 group-hover:w-1/2 scale-0 group-hover:scale-100 transition-all duration-200 opacity-100 bg-white"><span className="flex-shrink-0">Comming Soon</span></div>
+            </button>
             <h1 className="text-2xl font-semibold flex gap-2 items-center">{amount}<span className='font-normal text-sm md:text-md'>{lightAmount}</span></h1>
         </div>
         <div className={`flex justify-center items-center flex-shrink-0 absolute left-0 w-full ${bottom || 'md:-bottom-[76%] -bottom-[40%]'}`}>
