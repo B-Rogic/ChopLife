@@ -1,23 +1,26 @@
 'use client'
 import React, { useState, useRef, useEffect, useCallback } from 'react'
 import Image from 'next/image'
+import { BarLoader } from 'react-spinners'
+import LinearProgress from '@mui/material/LinearProgress';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 import { gsap } from 'gsap'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 import {ScrollTrigger} from 'gsap/ScrollTrigger'
 import Link from 'next/link'
+import { useCart } from '../context/CartProvider'
+import { productItems } from '../components/productItems'
 import CardComponent from '../components/CardComponent'
 import CardComponent2 from '../components/CardComponent2'
 import AccordionComponent from '../components/AccordionComponent'
-import firstCardImage from '@/images/firstCardImage.jpg'
-import secondCardImage from '@/images/secondCardImage.png'
-import thirdCardImage from '@/images/thirdCardImage.png'
 import fourthCardImage from '@/images/fourthCardImage.jpg'
 import fifthCardImage from '@/images/fifthCardImage.jpg'
 import sixthCardImage from '@/images/sixthCardImage.jpg'
 import seventhCardImage from '@/images/seventhCardImage.jpg'
 import eightCardImage from '@/images/eightCardImage.jpg'
 import portHarcourt from '@/images/portHarcourt.jpg'
-import Oyigbo from '@/images/Oyigbo.jpg'
+import Oyigbo from './../../images/Oyigbo.jpg'
 import eleme from '@/images/eleme.jpeg'
 import obioAkpor from '@/images/obioAkpor.jpeg'
 import { FaChevronDown, FaTimes } from 'react-icons/fa'
@@ -30,13 +33,11 @@ import leaf2 from '@/images/leaf2.png'
 import chicken from '@/images/chicken.png'
 import onion from '@/images/onion.png'
 import LocationCardComponent from '../components/LocationCardComponent'
-
+import chopLifeLogo from '@/images/chopLifeLogo.png'
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
+
 const page = () => {
   const [location, setLocation] = useState('')
-  const activeRef1 = useRef(null);
-  const activeRef2 = useRef(null);
-  const activeRef3 = useRef(null); 
   const rotationTriggerRef = useRef(null); 
   const rotationTriggerRef2 = useRef(null); 
   const rotationTriggerRef3 = useRef(null);
@@ -55,17 +56,10 @@ const page = () => {
   const translateYRef5 = useRef(null);  
   const translateYRef6 = useRef(null);  
   const translateYRef7 = useRef(null);  
-  const container = useRef(null) 
-  const itemsId ={ 
-    item1: 'first',
-    item2: 'second',
-    item3: 'third'
-  }
-  const handleClick = (clickedItem) => {
-    setActive(prevItem => 
-      prevItem === clickedItem ? null : clickedItem
-    )
-  }
+  const container = useRef(null);
+  const { addItemToCart } = useCart();
+  const [addToCart, setAddToCart] = useState(false);
+  const progressBarRef = useRef(null)
 
   // Dot navigation logic: Map original data to actual indices in carouselSlide
   useEffect(() => {
@@ -572,9 +566,39 @@ const page = () => {
       });
     };
   }, []);
+
+  const handledCartClick = useCallback((items) => {
+    addItemToCart(items);
+    setAddToCart(true);
+    const timeout = setTimeout(() => {
+      setAddToCart(false);
+    }, 1000)
+
+    return () => {
+      clearTimeout(timeout)
+    }
+  }, [addItemToCart])
+
+  useEffect(() => {
+    if(addToCart) {
+      gsap.fromTo(progressBarRef.current, {
+        width: '0%',
+      }, {
+        width: '100%',
+        duration: 1,
+        ease: 'power1.in'
+      })
+    }
+  }, [addToCart])
+
   return (
     <>
-      <div ref={container}  className="w-full md:h-screen h-[110vh] relative overflow-hidden">
+      <div className={`fixed bottom-10 md:right-20 right-5 flex gap-3 z-40 bg-white md:w-[20%] p-3 rounded-t-xl items-center ${addToCart ? 'scale-x-100' : 'scale-x-0'} transition-all duration-500 ease-in-out`}>
+        <Image src={chopLifeLogo} width={1000} height={1000} className='w-20' alt='chop life logo' />
+        <p className="text-sm">Item Added Successfully</p>
+        <div ref={progressBarRef} className={`absolute h-1 bg-[#ff003c] left-0 bottom-0`} ></div>
+      </div>
+      <div ref={container}  className="w-full md:h-screen h-[110vh] -z-1 relative overflow-hidden">
         <Image src={containerBackground} width={1000} height={1000} alt='container background' className='absolute top-0 left-0 w-full h-full' />
         <div className='backdrop-blur-lg flex items-center justify-center h-screen w-full md:p-10 p-5 relative'>
         <Image ref={translateYRef4} src={leaf} width={1000} height={1000} alt='leaf' className='absolute md:hidden block movedown reloadmovedownmobile1 top-[-20%] scale-50 left-[2%] w-[22%]' />
@@ -600,13 +624,16 @@ const page = () => {
         </div>
         </div>
       </div>
-      <div className='bg-[#fff5f7] w-full md:p-20 p-5'>
+      <div className='bg-[#fff5f7] w-full md:p-20 py-5'>
         <div className="flex flex-col gap-10">
           <h1 className="md:text-5xl text-4xl font-bold md:pt-3 pt-10 text-center text-[#1a1a1a] mb-10">Your Favourites</h1>
           <div className="grid md:grid-cols-3 md:gap-5">
-            <CardComponent src={firstCardImage} title='Spicy Noodles' description='Hot, steamy noodles toosed in a flowerful pepper blend.' order='Order Now' amount='N1,800.00' />
-            <CardComponent src={secondCardImage} title={`Chicken Shawarma`} description={`Packed with juicy fillings, sauces, and grilled perfection.`} order={`Order Now`} amount={`N2,500.00`} />
-            <CardComponent src={thirdCardImage} title={`Chicken and Chips`} description={`Choice of wings or drumsticks with cripsy yam and potatoes chips.`} order={`Order Now`} amount={`N3,500.00`} />
+            {productItems.slice(0, 3).map((items) => (
+              <CardComponent handleClick={() => handledCartClick(items)} key={items.id} src={items.image} title={items.name} description={items.description} order={`Order Now`} amount={items.amount.toLocaleString(undefined, {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+              })} />
+            ))}
           </div>
         </div>
         <Link href={`/home/menu`}>
@@ -618,15 +645,64 @@ const page = () => {
           <h1 className="md:text-5xl text-3xl md:px-0 px-[60px] font-bold text-center">Hot Food, Hotter Deals</h1>
           <p className="text-xl font-light text-center">Our meals are made fresh daily with quality ingredients, generous portions, and unbeatble flavor.</p>
           <div className="grid md:grid-cols-2 gap-5" ref={rotationTriggerRef}>
-            <CardComponent2 ref={rotationCardRef} title='Spicy Feast Combo' bottom='md:-bottom-[76%] -bottom-[48%]' src={fourthCardImage} description='Jollof Noodles - Smoky, party-style noodles' spices='Pepper Chicken (2 Pices) - Juicy and spicy!' order='Order Now' amount='₦7,500' lightAmount='- Save ₦1,500' />
-            <CardComponent2 ref={rotationCardRef2} black={true} bg={`bg-[#ffcc00]`} title='Chicken Lovers' src={fifthCardImage} bottom='md:bottom-[-10%] -bottom-[5%]' description='Barbecue Chicken - Charred to perfection' spices='Coctail or Smoothie - Refreshing drink' order='Order Now' amount='₦15,500' lightAmount='- Save ₦4,500' />
+            {productItems.slice(3, 5).map((item) => {
+              return (
+                <CardComponent2 
+                  key={item.id}
+                  ref={item.bgColor === '#ff003c' ? rotationCardRef : rotationCardRef2}
+                  title={item.name}
+                  bottom={item.bottom}
+                  src={item.image}
+                  description={item.description1}
+                  spices={item.description2}
+                  order='Order Now'
+                  amount={`₦${item.amount.toLocaleString()}`}
+                  lightAmount={`- Save ₦${item.save.toLocaleString()}`}
+                  bg={`${item.bgColor === '#ff003c' ? 'bg-[#ff003c]' : 'bg-[#ffcc00]'}`}
+                  textClass={`${item.bgColor === '#ff003c' ? 'text-white' : 'text-black'}`}
+                  black={`${item.bgColor === '#ff003c' ? 'bg-white' : 'bg-black'}`}
+                  handleClick={() => handledCartClick(item)}
+                />
+              );
+            })}
           </div>
           <div className="grid grid-cols-1" ref={rotationTriggerRef2}>
-            <CardComponent2 ref={rotationCardRef3} bottom='md:-bottom-[60%] -bottom-[5%]' bg={`bg-[#1a1a1a]`} title="Smoothie Bliss Combo" src={sixthCardImage} description='Any 1 Large Smoothie - Choose from menu' spices='Free Side Dish Add-on-Choose from Menu' order='Order Now' amount='₦6,500' lightAmount='- Save ₦3,500' />
+            {productItems.slice(5, 6).map((item) => (
+              <CardComponent2
+                key={item.id}
+                ref={item.bgColor === '#1a1a1a' ? rotationCardRef3 : null}
+                title={item.name}
+                bottom={item.bottom}
+                src={item.image}
+                description={item.description1}
+                spices={item.description2}
+                order='Order Now'
+                amount={`₦${item.amount.toLocaleString()}`}
+                lightAmount={`- Save ₦${item.save.toLocaleString()}`}
+                bg={`bg-[${item.bgColor}]`}
+                textClass={`${item.bgColor === '#1a1a1a' ? 'text-white' : 'text-black'}`}
+                black={`${item.bgColor === '#1a1a1a' ? 'bg-white' : 'bg-black'}`}
+                handleClick={() => handledCartClick(item)}
+              />
+            ))}
           </div>
           <div className="grid md:grid-cols-2 gap-5 items-start" ref={rotationTriggerRef3}>
-            <CardComponent2 ref={rotationCardRef4} bg={`bg-[#0a9900]`} title='Chill & Sip Cocktail Special' src={seventhCardImage} bottom='md:-bottom-[90%] -bottom-[60%]' description='Any 1 Signature Cocktail - Choose from Menu' spices='1 Small Chops Box - Spring rolls, samosa, and peppered gizzard bites' order='Order Now' amount='₦7,500' lightAmount='- Save ₦1,500' />
-            <CardComponent2 ref={rotationCardRef5} bottom='md:-bottom-[5%] -bottom-[5%]' bg={`bg-[#ff9100]`} title="Pizza Lovers' Feast" src={eightCardImage} description='1 Large Pizza - Choose from menu' spices='1 Free Cocktail - Choose from menu' order='Order Now' amount='₦9,500' lightAmount='- Save ₦5,500' />
+            {productItems.slice(6, 8).map((item) => (
+              <CardComponent2
+                key={item.id}
+                ref={item.bgColor === '#0a9900' ? rotationCardRef4 : rotationCardRef5}
+                title={item.name}
+                bottom={item.bottom}
+                src={item.image}
+                description={item.description1}
+                spices={item.description2}
+                order='Order Now'
+                amount={`₦${item.amount.toLocaleString()}`}
+                lightAmount={`- Save ₦${item.save.toLocaleString()}`}
+                bg={`${item.bgColor === '#0a9900' ? 'bg-[#0a9900]' : 'bg-[#ff9100]'}`}
+                handleClick={() => handledCartClick(item)}
+              />
+            ))}
           </div>
         </div>
       </div>
@@ -646,7 +722,7 @@ const page = () => {
       </div>
       <div className='w-full relative h-full'> 
         <Image src={containerBackground} width={1000} height={1000} alt='container background' className='absolute top-0 left-0 w-full h-full' />
-        <div className="flex flex-col gap-5 relative md:p-20 p-5 backdrop-blur-lg">
+        <div className="flex flex-col gap-5 relative md:p-20 p-2 backdrop-blur-lg">
           <h1 className="md:text-5xl text-3xl font-bold text-center text-[#1a1a1a] mb-10">We'd Love to Hear From You!</h1>
           <p className="text-xl text-center">Locate our stores, check delivery zones, and pick the best option for you!</p>
           <div className="grid md:grid-cols-4 grid-cols-2 gap-5">

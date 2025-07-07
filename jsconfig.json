@@ -1,7 +1,18 @@
 {
   "compilerOptions": {
+    "baseUrl": ".", // This is crucial. It sets the base directory for non-relative imports.
     "paths": {
-      "@/*": ["./src/*"]
+      "@/images/*": ["./src/images/*"], // This specifically maps @/images to your src/images folder
+      "@/*": ["./src/*"]               // This is a broader alias, good practice for other src imports
     }
-  }
+  },
+  "include": [
+    "next-env.d.ts", // Include Next.js environment declarations (even in JS projects)
+    "**/*.js",
+    "**/*.jsx"
+    // Add other file types if you use them, e.g., "**/*.mjs"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
