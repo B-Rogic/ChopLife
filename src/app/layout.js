@@ -33,17 +33,19 @@ export default function RootLayout({ children }) {
 
         {/* The meta description tag */}
         <meta
-          name="description"
+          name="Chop Life Shawarma"
           content="Experience the best shawarma in Port Harcourt Chop Life Shawarma offers delicious chicken, beef, and mixed shawarmas, pizzas, and refreshing drinks. Order now for fast delivery!"
         />
 
-        {/* Google Site Verification tag */}
-        <meta name="google-site-verification" content="Uvh5IWY6Nw2dhXAt68X3vPf6kfggB0EzLf_AAkWZ4RY" />
-
+        <meta name="msvalidate.01" content="F46337E81B88D6CEA3C4F884D255A0E1" />
         {/* Other meta tags you might want to include */}
+        
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="keywords" content="Choplife Shawarma, best shawarma in Port Harcourt, Port Harcourt food delivery, order shawarma online, pizza in Port Harcourt, affordable shawarma, fast food Port Harcourt, shawarma near me, local food delivery PH, best pizza deals, tasty shawarma, Choplife menu, shawarma delivery Port Harcourt, late-night food PH, Nigerian street food" />
+
+        {/* Google Site Verification tag */}
+        <meta name="google-site-verification" content="Uvh5IWY6Nw2dhXAt68X3vPf6kfggB0EzLf_AAkWZ4RY" />
 
         {/* Open Graph (for social media sharing) - manually added */}
         <meta property="og:title" content="ChopLife Shawarma" />
