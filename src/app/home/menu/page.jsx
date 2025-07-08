@@ -222,7 +222,7 @@ const page = () => {
                                             </div>
                                         </div>
                                         <div className="flex justify-between items-center">
-                                            <button onClick={() => handledCartClick(item)} className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                            <button onClick={() => handledCartClick(item)} className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Add To Cart</button>
                                             <h3 className="font-semibold text-3xl"><span className="text-sm text-gray-400 font-extralight">from</span> ₦{item.amount.toLocaleString()}</h3>
                                         </div>
                                     </div>
@@ -261,7 +261,7 @@ const page = () => {
                                             </div>
                                         </div>
                                         <div className="flex justify-between items-center">
-                                            <button onClick={() => handledCartClick(item)} className="py-2 px-8 flex-shrink-0 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                            <button onClick={() => handledCartClick(item)} className="py-2 px-8 flex-shrink-0 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Add To Cart</button>
                                             <h3 className="font-semibold text-3xl">₦{item.amount.toLocaleString()}</h3>
                                         </div>
                                     </div>
@@ -300,7 +300,7 @@ const page = () => {
                                             </div>
                                         </div>
                                         <div className="flex justify-between items-center">
-                                            <button onClick={() => handledCartClick(item)} className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                            <button onClick={() => handledCartClick(item)} className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Add To Cart</button>
                                             <h3 className="font-semibold text-3xl"><span className="text-sm text-gray-400 font-extralight">from</span> ₦1,800</h3>
                                         </div>
                                     </div>
@@ -339,7 +339,7 @@ const page = () => {
                                             </div>
                                         </div>
                                         <div className="flex justify-between items-center">
-                                            <button onClick={() => handledCartClick(item)} className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                            <button onClick={() => handledCartClick(item)} className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Add To Cart</button>
                                             <h3 className="font-semibold text-3xl">₦{item.amount} <span className="text text-gray-300 text-sm">{item.chicken}</span></h3>
                                         </div>
                                     </div>
@@ -381,7 +381,7 @@ const page = () => {
                                             </div>
                                         </div>
                                         <div className="flex justify-between items-center">
-                                            <button onClick={() => handledCartClick(item)} className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                            <button onClick={() => handledCartClick(item)} className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Add To Cart</button>
                                             <h3 className="font-semibold text-3xl"><span className="text-sm text-gray-400 font-extralight">from</span> ₦{item.amount.toLocaleString()}</h3>
                                         </div>
                                     </div>
@@ -423,7 +423,7 @@ const page = () => {
                                             </div>
                                         </div>
                                         <div className="flex justify-between items-center">
-                                            <button onClick={() => handledCartClick(item)} className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                            <button onClick={() => handledCartClick(item)} className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Add To Cart</button>
                                             <h3 className="font-semibold text-3xl"><span className="text-sm text-gray-400 font-extralight">from</span> ₦1,800</h3>
                                         </div>
                                     </div>
@@ -465,7 +465,7 @@ const page = () => {
                                             </div>
                                         </div>
                                         <div className="flex justify-between items-center">
-                                            <button onClick={() => handledCartClick(item)} className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Order Now</button>
+                                            <button onClick={() => handledCartClick(item)} className="py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl">Add To Cart</button>
                                             <h3 className="font-semibold text-3xl">₦{item.amount} <span className="text text-gray-300 text-sm">{item.chicken}</span></h3>
                                         </div>
                                     </div>

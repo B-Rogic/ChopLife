@@ -10,7 +10,7 @@ import chicken from '@/images/chicken.png'
 import chopLifeLogo from '@/images/chopLifeLogo.png'
 
 const page = () => {
-  const { cartItems, removeItemFromCart, updateItemQuantity, getTotalPrice } = useCart();
+  const { cartItems, removeItemFromCart, removeAllCartItem, updateItemQuantity, getTotalPrice } = useCart();
   const [checkoutActive, setCheckoutActive] = useState(false);
   const checkoutRef = useRef(null)
   const closeRef = useRef(null)
@@ -85,7 +85,7 @@ const page = () => {
             )}
             <div className="flex flex-col justify-center items-center bg-red-5 md:my-0 my-5">
               <p className="text-white text-center">You don't want to turn back now! <br /> Just click the button and get your order delivered to you ASAP</p>
-              <a onClick={() => setCheckoutActive(false)}
+              <a onClick={() => {setCheckoutActive(false), removeAllCartItem(cartItems.map(item => item.id))}}
                 href={`whatsapp://send?phone=2348154610235&text=${generateWhatsAppMessage()}`}
                 className='w-full'
                 target='_blank'

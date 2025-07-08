@@ -42,6 +42,10 @@ export const CartProvider = ({children}) => {
     )
   }
 
+  const removeAllCartItem = () => {
+    setCartItems([]);
+  }
+
   const updateItemQuantity = (itemId, newQuantity) => {
     setCartItems((prevItems) => 
       prevItems.map((item) => 
@@ -59,6 +63,7 @@ export const CartProvider = ({children}) => {
       cartItems,
       addItemToCart,
       removeItemFromCart,
+      removeAllCartItem,
       updateItemQuantity,
       getTotalPrice,
     }}>

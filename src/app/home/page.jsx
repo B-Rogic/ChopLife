@@ -617,7 +617,7 @@ const page = () => {
         <div className="flex justify-center flex-col md:gap-0 gap-3 items-center reloadscale scale-50">
           <h1 className='md:text-[5rem] text-[3rem] font-bold text-[#ff003c] md:leading-[4rem] leading-[2rem]'>Chop Life <span className='text-[#1a1a1a]'>O...</span></h1>
           <h1 className='md:text-[5rem] text-[2.5rem] font-bold text-[#1a1a1a]'>You Deserve it!</h1>
-          <p className="md:text-lg mb-5 md:w-[60%] text-center text-[#6e6e6e]">Delicious meals made with love and spice - from spicy noodles to juicy shawarma and crispy yam chips. Order now, we deliver fast!</p>
+          <p className="md:text-lg mb-5 md:w-[60%] text-center text-[#6e6e6e]">Delicious meals made with love and spice - from spicy noodles to juicy shawarma and crispy yam chips. Add To Cart, we deliver fast!</p>
           <Link href={`/home/menu`}>
             <button className='bg-[#ff003c] hover:scale-[1.05] transition-transform duration-200 ease-in-out rounded-3xl py-2 px-8 text-xl text-white'>View Our Menu</button>
           </Link>
@@ -629,7 +629,7 @@ const page = () => {
           <h1 className="md:text-5xl text-4xl font-bold md:pt-3 pt-10 text-center text-[#1a1a1a] mb-10">Your Favourites</h1>
           <div className="grid md:grid-cols-3 md:gap-5">
             {productItems.slice(0, 3).map((items) => (
-              <CardComponent handleClick={() => handledCartClick(items)} key={items.id} src={items.image} title={items.name} description={items.description} order={`Order Now`} amount={items.amount.toLocaleString(undefined, {
+              <CardComponent handleClick={() => handledCartClick(items)} key={items.id} src={items.image} title={items.name} description={items.description} order={`Add To Cart`} amount={items.amount.toLocaleString(undefined, {
                 minimumFractionDigits: 2,
                 maximumFractionDigits: 2
               })} />
@@ -655,7 +655,7 @@ const page = () => {
                   src={item.image}
                   description={item.description1}
                   spices={item.description2}
-                  order='Order Now'
+                  order='Add To Cart'
                   amount={`₦${item.amount.toLocaleString()}`}
                   lightAmount={`- Save ₦${item.save.toLocaleString()}`}
                   bg={`${item.bgColor === '#ff003c' ? 'bg-[#ff003c]' : 'bg-[#ffcc00]'}`}
@@ -676,7 +676,7 @@ const page = () => {
                 src={item.image}
                 description={item.description1}
                 spices={item.description2}
-                order='Order Now'
+                order='Add To Cart'
                 amount={`₦${item.amount.toLocaleString()}`}
                 lightAmount={`- Save ₦${item.save.toLocaleString()}`}
                 bg={`bg-[${item.bgColor}]`}
@@ -696,7 +696,7 @@ const page = () => {
                 src={item.image}
                 description={item.description1}
                 spices={item.description2}
-                order='Order Now'
+                order='Add To Cart'
                 amount={`₦${item.amount.toLocaleString()}`}
                 lightAmount={`- Save ₦${item.save.toLocaleString()}`}
                 bg={`${item.bgColor === '#0a9900' ? 'bg-[#0a9900]' : 'bg-[#ff9100]'}`}

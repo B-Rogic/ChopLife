@@ -38,7 +38,7 @@ const CartComponent = ({ active = false, handleActiveClick, handleCheckoutClick 
           <h1 className="text-center font-bold text-xl mx-auto">YOUR CART</h1>
           <Image src={chopLifeLogo} alt='chop life logo' width={1000} height={1000} className='md:w-40 w-20' />
         </div>
-        <div className="flex flex-col justify-between gap-5 p-5 h-full">
+        <div className="flex flex-col justify-between gap-5 p-2 h-full">
             {cartItems.length === 0 ? (
               <div className="flex justify-center items-center">
                   <p>Your cart is empty.</p>
@@ -50,7 +50,7 @@ const CartComponent = ({ active = false, handleActiveClick, handleCheckoutClick 
                 {cartItems.map((item) => (
                   <div key={item.id} className="flex gap-3 items-center justify-between p-3 relative">
                     <Image alt='first card image' src={item.image} width={1000} height={1000} className='md:w-32 w-20 h-20 object-cover rounded-xl' />
-                    <div className="flex flex-col justify-between h-full">
+                    <div className="flex flex-col justify-between h-full me-auto">
                       <div className="flex flex-col">
                         <p>{item.name}</p>
                         <p>

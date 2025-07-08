@@ -19,7 +19,7 @@ const layout = ({children}) => {
   const navRef = useRef(null);
   const pathname = usePathname();
   const [active, setActive] = useState(false);
-  const { cartItems, removeItemFromCart, updateItemQuantity, getTotalPrice } = useCart();
+  const { cartItems, removeAllCartItem, getTotalPrice } = useCart();
   const [checkoutActive, setCheckoutActive] = useState(false);
   const checkoutRef = useRef(null);
   const closeRef = useRef(null);
@@ -77,9 +77,16 @@ const layout = ({children}) => {
       return encodeURIComponent(message);
   }, [cartItems, getTotalPrice]);
 
+  const handlePlaceOrder = () => {
+    const message = generateWhatsAppMessage()
+    window.open(`whatsapp://send?phone=2348154610235&text=${message}`, '_blank', 'noopener noreferrer');
+    removeAllCartItem();
+    setCheckoutActive(false);
+  }
+
   return (
     <>
-        <div className={`justify-between items-center gap-20 w-full md:px-20 p-3 px-5 top-0 left-0 z-40 fixed bg-[rgba(255,255,255,0.3)] backdrop-blur-md text-[#1a1a1a] ${pathname === '/home/contact/portharcourt' ? 'hidden' : 'flex'}`}>
+        <div className={`justify-between items-center gap-5 w-full md:px-20 p-3 px-5 top-0 left-0 z-40 fixed bg-[rgba(255,255,255,0.3)] backdrop-blur-md text-[#1a1a1a] ${pathname === '/home/contact/portharcourt' ? 'hidden' : 'flex'}`}>
           <Link href={`/home`} className='flex-shrink-0 md:w-[10%] md:h-[10%] w-[30%] h-[30%] '>
             <Image src={chopLifeLogo} width={1000} height={1000} alt='chop life logo' className='w-full' />
           </Link>
@@ -117,13 +124,13 @@ const layout = ({children}) => {
               </div>
             </Link>
           </div>
-          <div className="w-[35px] md:hidden block relative cursor-pointer h-5" onClick={() => setNavActive(!navActive)}>
-            <div className={`absolute transition-transform duration-200 ease-in-out left-0 top-2 bg-[#1a1a1a] w-full h-[0.2px] ${navActive ? 'rotate-45 origin-center -translate-y-2' : ''}`}></div>
-            <div className={`absolute transition-transform duration-200 ease-in-out left-0 top-0 bg-[#1a1a1a] w-full h-[0.2px] ${navActive ? '-rotate-45 origin-center' : ''}`}></div>
-          </div>
           <div onClick={() => setActive(!active)} className={`flex justify-center cursor-pointer items-center rounded-md w-10 h-10 relative md:me-0 me-auto`}>
             <p className="absolute -top-3 right-0 text-[#ff003c] rounded-full z-10 w-7 h-7 flex justify-center items-center bg-[#ebedeb]">{cartItems.length > 0 ? cartItems.length : 0}</p>
             <ShoppingCartIcon size={28} className='relative' />
+          </div>
+          <div className="w-[35px] md:hidden block relative cursor-pointer h-5" onClick={() => setNavActive(!navActive)}>
+            <div className={`absolute transition-transform duration-200 ease-in-out left-0 top-2 bg-[#1a1a1a] w-full h-[0.2px] ${navActive ? 'rotate-45 origin-center -translate-y-2' : ''}`}></div>
+            <div className={`absolute transition-transform duration-200 ease-in-out left-0 top-0 bg-[#1a1a1a] w-full h-[0.2px] ${navActive ? '-rotate-45 origin-center' : ''}`}></div>
           </div>
         </div>
         <div className={`fixed top-0 left-0 w-full h-screen bg-[rgba(0,0,0,0.3)] backdrop-blur-md z-[99999] ${checkoutActive ? 'block' : 'hidden'}`}></div>
@@ -158,16 +165,9 @@ const layout = ({children}) => {
               )}
               <div className="flex flex-col justify-center items-center bg-red-5 md:my-0 my-5">
                 <p className="text-white text-center">You don't want to turn back now! <br /> Just click the button and get your order delivered to you ASAP</p>
-                <a onClick={() => {setCheckoutActive(false); setActive(false);}}
-                  href={`whatsapp://send?phone=2348154610235&text=${generateWhatsAppMessage()}`}
-                  className='w-full'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                >
-                  <button className="justify-center w-full flex gap-3 items-center my-3 py-2 rounded-xl bg-[#fff] tracking-[3px] hover:scale-x-[1.1] transition-transform duration-200 ease-in-out text-black">
-                    Place Your Order <FaWhatsapp className='text-[#006838]' />
-                  </button>
-                </a>
+                <button onClick={handlePlaceOrder} className="justify-center w-full flex gap-3 items-center my-3 py-2 rounded-xl bg-[#fff] tracking-[3px] hover:scale-x-[1.1] transition-transform duration-200 ease-in-out text-black">
+                  Place Your Order <FaWhatsapp className='text-[#006838]' />
+                </button>
               </div>
           </div>
         </div>
