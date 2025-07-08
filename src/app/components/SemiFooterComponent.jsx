@@ -74,8 +74,8 @@ const SemiFooterComponent = ({className}) => {
               <button className='bg-[#ff003c] p-3 w-full text-white text-xl rounded-3xl'>Submit</button>
             </form>
             </div>
-            <div className="w-[90%] h-full overflow-hidden rounded-xl">
-            <Image src={messageBackground} width={1000} height={1000} alt='message relative background' className='w-full object-cover md:hidden block h-full' />
+            <div className="w-[90%] h-full overflow-hidden rounded-xl md:mx-0 mx-auto">
+              <Image src={messageBackground} width={1000} height={1000} alt='message relative background' className='w-full object-cover md:hidden block h-full' />
             </div>
         </div>
     </div>

@@ -119,7 +119,7 @@ const CarouselComponent = ({ className }) => {
     setCurrentSlide((prevSlide) => prevSlide - 1);
   };
   return (
-    <div className={`bg-[#1a1a1a] w-full flex flex-col relative z-10 overflow-hidden md:py-10 p-5 ${className}`}>
+    <div className={`bg-[#1a1a1a] w-full flex flex-col relative z-10 overflow-hidden md:py-10 p-2 ${className}`}>
         <div className="flex gap-5 md:absolute relative md:left-0 md:top-0 w-full h-full z-20">
             <div className="flex justify-start md:w-[47%] w-full md:p-20 md:pb-0 pb-5" style={{
             backgroundImage: 'linear-gradient(to right, #1a1a1acb 60%, transparent)'

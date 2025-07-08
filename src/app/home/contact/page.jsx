@@ -5,11 +5,10 @@ import { FaTimes } from 'react-icons/fa'
 import LocationCardComponent from '@/app/components/LocationCardComponent'
 import AccordionComponent from '@/app/components/AccordionComponent'
 import containerBackground from '@/images/backgroundImage.jpg'
-import newYork from '@/images/newYork.png'
-import london from '@/images/london.png'
-import berlin from '@/images/berlin.png'
-import amsterdam from '@/images/amsterdam.png'
-import bacharest from '@/images/bacharest.png'
+import portHarcourt from '@/images/portHarcourt.jpg'
+import Oyigbo from '@/images/Oyigbo.jpg'
+import eleme from '@/images/eleme.jpeg'
+import obioAkpor from '@/images/obioAkpor.jpeg'
 
 
 const page = () => {
@@ -17,19 +16,18 @@ const page = () => {
   return (
     <>  
         <div className={`bg-white fixed flex justify-center items-center w-full h-full z-40 top-0 left-0 ${location ? 'flex' : 'hidden'}`}> 
-            <div onClick={() => setLocation('')} className="absolute cursor-pointer top-5 right-5 rounded-full w-[50px] h-[50px] flex justify-center items-center shadow-md bg-white">
-                <FaTimes className='text-2xl' />
-            </div> 
-            {location === 'newyork' ? (
-                <iframe src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d12091.094218320683!2d-73.981905!3d40.745008!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDDCsDQ0JzQyLjAiTiA3M8KwNTgnNTQuOSJX!5e0!3m2!1sen!2sus!4v1750781447491!5m2!1sen!2sus" width="100%" height="60%" style={{border: '0'}} ></iframe>
-            ) : location === 'london' ? (
-                <iframe src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d9931.883789116158!2d-0.134998!3d51.513749!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNTHCsDMwJzQ5LjUiTiAwwrAwOCcwNi4wIlc!5e0!3m2!1sen!2sus!4v1750781501812!5m2!1sen!2sus" width="100%" height="60%" style={{border: '0'}} ></iframe>
-            ) : location === 'amsterdam' ? (
-                <iframe src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d9744.239568782807!2d4.884962!3d52.36933400000001!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNTLCsDIyJzA5LjYiTiA0wrA1MycwNS45IkU!5e0!3m2!1sen!2sus!4v1750781544150!5m2!1sen!2sus" width="100%" height="60%" style={{border: '0'}} ></iframe>
-            ) : location === 'berlin' ? (
-                <iframe src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d9705.473774009051!2d13.357892!3d52.54486!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNTLCsDMyJzQxLjUiTiAxM8KwMjEnMjguNCJF!5e0!3m2!1sen!2sus!4v1750781633150!5m2!1sen!2sus" width="100%" height="60%" style={{border: '0'}}></iframe>
+            <div onClick={() => setLocation('')} className="flex justify-center cursor-pointer absolute top-3 left-3 items-center rounded-full p-1 w-8 h-8 text-white bg-[#0000008f] backdrop-blur-md">
+                <div className="w-[70%] rotate-45 h-[0.5px] bg-white absolute"></div>
+                <div className="w-[70%] h-[0.5px] -rotate-45 bg-white absolute"></div>
+            </div>
+            {location === 'portharcourt' ? (
+                <iframe src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d15901.139161071089!2d6.908876!3d4.891911!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNMKwNTMnMzAuOSJOIDbCsDU0JzMyLjAiRQ!5e0!3m2!1sen!2sus!4v1750776344687!5m2!1sen!2sus" width="100%" height="60%" style={{border: '0'}} ></iframe>
+            ) : location === 'oyigbo' ? (
+                <iframe src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d15901.252929871465!2d7.123382!3d4.887119!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNMKwNTMnMTMuNiJOIDfCsDA3JzI0LjIiRQ!5e0!3m2!1sen!2sus!4v1750778715757!5m2!1sen!2sus" width="100%" height="60%" style={{border: '0'}} ></iframe>
+            ) : location === 'eleme' ? (
+                <iframe src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d15903.299020113674!2d7.121701!3d4.800122!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNMKwNDgnMDAuNCJOIDfCsDA3JzE4LjEiRQ!5e0!3m2!1sen!2sus!4v1750778813531!5m2!1sen!2sus" width="100%" height="60%" style={{border: '0'}} ></iframe>
             ) : (
-                <iframe src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d11393.858531027621!2d26.094302!3d44.444143!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDTCsDI2JzM4LjkiTiAyNsKwMDUnMzkuNSJF!5e0!3m2!1sen!2sus!4v1750781671775!5m2!1sen!2sus" width="100%" height="60%" style={{border: '0'}}></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d15901.377397141632!2d7.046677!3d4.881871!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNMKwNTInNTQuNyJOIDfCsDAyJzQ4LjAiRQ!5e0!3m2!1sen!2sus!4v1750778891066!5m2!1sen!2sus" width="100%" height="60%" style={{border: '0'}} ></iframe>
             )}
         </div>
         <div className='w-full relative'>
@@ -72,11 +70,10 @@ const page = () => {
                     </div>
                 </div>
                 <div className="grid md:grid-cols-5 grid-cols-2 items-start gap-3">
-                    <LocationCardComponent onclick={() => setLocation('newyork')} bg={`bg-[#ff003b80]`} src={newYork} locationName={`New York`} />
-                    <LocationCardComponent onclick={() => setLocation('london')} bg={`bg-[#ffcc0080]`} src={london} locationName={`London`} />
-                    <LocationCardComponent onclick={() => setLocation('berlin')} bg={`bg-[#0a990080]`} src={berlin} locationName={`Berlin`} />
-                    <LocationCardComponent onclick={() => setLocation('amsterdam')} bg={`bg-[#33333380]`} src={amsterdam} locationName={`Amsterdam`} />
-                    <LocationCardComponent onclick={() => setLocation('bacharest')} bg={`bg-[#ff910080]`} src={bacharest} locationName={`Bacharest`} />
+                    <LocationCardComponent onclick={() => setLocation('portharcourt')} src={portHarcourt} locationName={`Port Harcourt`} />
+                    <LocationCardComponent onclick={() => setLocation('oyigbo')} bg={`bg-[#ff91008f]`} src={Oyigbo} locationName={`Oyigbo`} />
+                    <LocationCardComponent onclick={() => setLocation('eleme')} src={eleme} locationName={`Eleme`} />
+                    <LocationCardComponent onclick={() => setLocation('obioakpor')} bg={`bg-[#ff91008f]`} src={obioAkpor} locationName={`Obio Akpor`} />
                 </div>
                 <AccordionComponent />
             </div>

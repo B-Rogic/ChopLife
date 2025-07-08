@@ -1,10 +1,6 @@
 'use client'
 import React, { useState, useRef, useEffect, useCallback } from 'react'
 import Image from 'next/image'
-import { BarLoader } from 'react-spinners'
-import LinearProgress from '@mui/material/LinearProgress';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 import { gsap } from 'gsap'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 import {ScrollTrigger} from 'gsap/ScrollTrigger'
@@ -14,16 +10,10 @@ import { productItems } from '../components/productItems'
 import CardComponent from '../components/CardComponent'
 import CardComponent2 from '../components/CardComponent2'
 import AccordionComponent from '../components/AccordionComponent'
-import fourthCardImage from '@/images/fourthCardImage.jpg'
-import fifthCardImage from '@/images/fifthCardImage.jpg'
-import sixthCardImage from '@/images/sixthCardImage.jpg'
-import seventhCardImage from '@/images/seventhCardImage.jpg'
-import eightCardImage from '@/images/eightCardImage.jpg'
 import portHarcourt from '@/images/portHarcourt.jpg'
 import Oyigbo from './../../images/Oyigbo.jpg'
 import eleme from '@/images/eleme.jpeg'
 import obioAkpor from '@/images/obioAkpor.jpeg'
-import { FaChevronDown, FaTimes } from 'react-icons/fa'
 import containerBackground from '@/images/backgroundImage.jpg'
 import shawarma from '@/images/shawarma.png'
 import pepper from '@/images/pepper.png'
@@ -31,7 +21,6 @@ import carrot from '@/images/carrot.png'
 import leaf from '@/images/leaf.png'
 import leaf2 from '@/images/leaf2.png'
 import chicken from '@/images/chicken.png'
-import onion from '@/images/onion.png'
 import LocationCardComponent from '../components/LocationCardComponent'
 import chopLifeLogo from '@/images/chopLifeLogo.png'
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
@@ -707,9 +696,10 @@ const page = () => {
         </div>
       </div>
       <div className={`bg-white fixed flex justify-center items-center w-full h-full z-40 top-0 left-0 ${location ? 'flex' : 'hidden'}`}> 
-        <div onClick={() => setLocation('')} className="absolute cursor-pointer top-5 right-5 rounded-full w-[50px] h-[50px] flex justify-center items-center shadow-md bg-white">
-          <FaTimes className='text-2xl' />
-        </div> 
+        <div onClick={() => setLocation('')} className="flex justify-center cursor-pointer absolute top-3 left-3 items-center rounded-full p-1 w-8 h-8 text-white bg-[#0000008f] backdrop-blur-md">
+          <div className="w-[70%] rotate-45 h-[0.5px] bg-white absolute"></div>
+          <div className="w-[70%] h-[0.5px] -rotate-45 bg-white absolute"></div>
+        </div>
         {location === 'portharcourt' ? (
           <iframe src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d15901.139161071089!2d6.908876!3d4.891911!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNMKwNTMnMzAuOSJOIDbCsDU0JzMyLjAiRQ!5e0!3m2!1sen!2sus!4v1750776344687!5m2!1sen!2sus" width="100%" height="60%" style={{border: '0'}} ></iframe>
         ) : location === 'oyigbo' ? (
