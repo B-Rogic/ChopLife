@@ -618,10 +618,17 @@ const page = () => {
           <h1 className="md:text-5xl text-4xl font-bold md:pt-3 pt-10 text-center text-[#1a1a1a] mb-10">Your Favourites</h1>
           <div className="grid md:grid-cols-3 md:gap-5">
             {productItems.slice(0, 3).map((items) => (
-              <CardComponent handleClick={() => handledCartClick(items)} key={items.id} src={items.image} title={items.name} description={items.description} order={`Add To Cart`} amount={items.amount.toLocaleString(undefined, {
+              <CardComponent 
+              handleClick={() => handledCartClick(items)} key={items.id}
+              src={items.image} title={items.name}
+              description={items.description} 
+              order={`Add To Cart`} 
+              amount={items.amount.toLocaleString(undefined, {
                 minimumFractionDigits: 2,
                 maximumFractionDigits: 2
-              })} />
+              })}
+              regular={items.regular && '/ regular'}
+              />
             ))}
           </div>
         </div>
@@ -650,7 +657,8 @@ const page = () => {
                   bg={`${item.bgColor === '#ff003c' ? 'bg-[#ff003c]' : 'bg-[#ffcc00]'}`}
                   textClass={`${item.bgColor === '#ff003c' ? 'text-white' : 'text-black'}`}
                   black={`${item.bgColor === '#ff003c' ? 'bg-white' : 'bg-black'}`}
-                  handleClick={() => handledCartClick(item)}
+                  handleClick={() => {item.comingSoon ? null : handledCartClick(item)}}
+                  extraClass={`${item.comingSoon ? 'opacity-50 cursor-not-allowed' : ''}`}
                 />
               );
             })}
@@ -671,7 +679,8 @@ const page = () => {
                 bg={`bg-[${item.bgColor}]`}
                 textClass={`${item.bgColor === '#1a1a1a' ? 'text-white' : 'text-black'}`}
                 black={`${item.bgColor === '#1a1a1a' ? 'bg-white' : 'bg-black'}`}
-                handleClick={() => handledCartClick(item)}
+                handleClick={() => {item.comingSoon ? null : handledCartClick(item)}}
+                extraClass={`${item.comingSoon ? 'opacity-50 cursor-not-allowed' : ''}`}
               />
             ))}
           </div>
@@ -689,7 +698,8 @@ const page = () => {
                 amount={`₦${item.amount.toLocaleString()}`}
                 lightAmount={`- Save ₦${item.save.toLocaleString()}`}
                 bg={`${item.bgColor === '#0a9900' ? 'bg-[#0a9900]' : 'bg-[#ff9100]'}`}
-                handleClick={() => handledCartClick(item)}
+                handleClick={() => {item.comingSoon ? null : handledCartClick(item)}}
+                extraClass={`${item.comingSoon ? 'opacity-50 cursor-not-allowed' : ''}`}
               />
             ))}
           </div>

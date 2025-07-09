@@ -1,4 +1,3 @@
-
 import firstCardImage from '@/images/firstCardImage.jpg'
 import secondCardImage from '@/images/secondCardImage.png'
 import thirdCardImage from '@/images/thirdCardImage.png'
@@ -40,211 +39,235 @@ import beerFloat from '@/images/beerFloat.png'
 import soda from '@/images/soda.png'
 import zoboMojitos from '@/images/zoboMojitos.jpg'
 import naijaSunrise from '@/images/naijaSunrise.jpg'
+import smallPizza from '@/images/smallPizza.jpg'
 
 export const productItems = [
   {
-    'id': 1, 
+    'id': 1,
     'name': 'Spicy Noodles',
     'description': 'Hot, steamy noodles toosed in a flowerful pepper blend.',
-    'amount': 1_800,
+    'amount': 2_000,
     'image': firstCardImage
   },
   {
-    'id': 2, 
+    'id': 2,
     'name': 'Chicken Shawarma',
     'description': 'Packed with juicy fillings, sauces, and grilled perfection.',
     'amount': 2_500,
-    'image': secondCardImage
+    'image': secondCardImage,
+    'regular': true,
   },
   {
-    'id': 3, 
+    'id': 3,
     'name': 'Chicken and Chips',
     'description': 'Choice of wings or drumsticks with cripsy yam and potatoes chips.',
     'amount': 3_500,
     'image': thirdCardImage
   },
   {
-    'id': 4, 
+    'id': 4,
     'name': 'Spicy Fast Combo',
     'description1': 'Jollof Noodles - Smoky, party-style noodles',
     'description2': 'Pepper Chicken (2 Pices) - Juicy and spicy!',
-    'amount': 7_500,
-    'save': 1_500,
+    'amount': 0,
+    'save': 0,
     'image': fourthCardImage,
     'bgColor': '#ff003c',
     'textColor': '#fff',
-    'bottom': 'md:-bottom-[76%] -bottom-[48%]'
+    'bottom': 'md:-bottom-[76%] -bottom-[48%]',
+    'comingSoon': true
   },
   {
-    'id': 5, 
+    'id': 5,
     'name': 'Chicken Lovers',
     'description1': 'Barbecue Chicken - Charred to perfection',
     'description2': 'Cocktail or Smoothie',
-    'amount': 15_500,
-    'save': 4_500,
+    'amount': 0,
+    'save': 0,
     'image': fifthCardImage,
     'bgColor': '#ffcc00',
-    'textColor': '#000', 
-    'bottom': 'md:bottom-[-10%] -bottom-[5%]'
+    'textColor': '#000',
+    'bottom': 'md:bottom-[-10%] -bottom-[5%]',
+    'comingSoon': true
   },
   {
-    'id': 6, 
+    'id': 6,
     'name': 'Smoothie Bliss Combo',
     'description1': 'Any 1 Large Smoothie - Choose from menu',
     'description2': 'Free Side Dish Add-on-Choose from Menu',
-    'amount': 6_500,
-    'save': 3_500,
+    'amount': 0,
+    'save': 0,
     'image': sixthCardImage,
     'bgColor': '#1a1a1a',
     'textColor': '#fff',
-    'bottom': 'md:-bottom-[50%] -bottom-[10%]'
+    'bottom': 'md:-bottom-[50%] -bottom-[10%]',
+    'comingSoon': true
   },
   {
-    'id': 7, 
+    'id': 7,
     'name': 'Chill & Sip Cocktail Special',
     'description1': 'Any 1 Signature Cocktail - Choose from Menu',
     'description2': '1 Small Chops Box - Spring rolls, samosa, and peppered gizzard bites',
-    'amount': 7_500,
-    'save': 1_500,
-    'image': seventhCardImage, 
+    'amount': 0,
+    'save': 0,
+    'image': seventhCardImage,
     'bgColor': '#0a9900',
-    'bottom': 'md:-bottom-[90%] -bottom-[60%]'
+    'bottom': 'md:-bottom-[90%] -bottom-[60%]',
+    'comingSoon': true
   },
   {
-    'id': 8, 
+    'id': 8,
     'name': "Pizza Lovers' Feast",
     'description1': '1 Large Pizza - Choose from Menu',
     'description2': '1 Free Cocktail - Choose from menu',
-    'amount': 9_500,
-    'save': 5_500,
+    'amount': 0,
+    'save': 0,
     'image': eightCardImage,
     'bgColor': '#ff9100',
-    'bottom': 'md:-bottom-[5%] -bottom-[5%]'
+    'bottom': 'md:-bottom-[5%] -bottom-[5%]',
+    'comingSoon': true
   },
   {
     'id': 9,
+    'name': "Pizza",
+    'ingredients': "Soft crust pizza loaded with cheese, pepperoni, chicken, or veggies.",
+    'nutritionInfo': ['Calories: ~280 kcal', 'Carbs: 32g', 'Protein: 12g', 'Fat: 14g'],
+    'alergies': 'Gluten, Dairy, May contain soy',
+    'amount': 3500,
+    'image': smallPizza,
+    'categories': ['Small: 10,000', 'Medium: 12,000', 'Large: 15,000'],
+  },
+  {
+    'id': 10,
     'name': "Pepperoni Pizza",
     'ingredients': "Soft crust pizza loaded with cheese, pepperoni, chicken, or veggies.",
     'nutritionInfo': ['Calories: ~280 kcal', 'Carbs: 32g', 'Protein: 12g', 'Fat: 14g'],
     'alergies': 'Gluten, Dairy, May contain soy',
     'amount': 3500,
     'image': pepperoniPizza,
+    'comingSoon': true,
   },
   {
-    'id': 10,
+    'id': 11,
     'name': "Garlic Supreme",
     'ingredients': "Roasted garlic cloves, caramelized onions, mozzarella, parmesan, Alfredo sauce, fresh parsley",
     'nutritionInfo': ['Calories: ~270', 'Fat: 13g', 'Carbohydrates: 27g', 'Protein: 11g'],
     'alergies': 'Dairy, Gluten',
     'amount': 25800,
     'image': garlicSupreme,
+    'comingSoon': true
   },
   {
-    'id': 11,
+    'id': 12,
     'name': "Firecracker Inferno",
     'ingredients': "Spicy pepperoni, jalapenos, crushed red pepper, mozzarella, marinara sauce, sriracha drizzle",
     'nutritionInfo': ['Calories: ~280', 'Fat: 14g', 'Carbohydrates: 28g', 'Protein: 12g'],
     'alergies': 'Dairy, Gluten',
     'amount': 15800,
     'image': firecracker,
-  },
-  {
-    'id': 12, 
-    'name': "Naija Jollof Pasta",
-    'ingredients': 'Our twist on the classic Jollof - al dente paster simmered in smoky tomato-pepper sauce, with sauteed onions, belle peppers, and spiced beef or chicken.',
-    'nutritionInfo': ['Calories: ~280', 'Fat: 14g', 'Peppered Beef or', 'Chicken'],
-    'alergies': 'None',
-    'amount': 2_000,
-    'image': pasta
+    'comingSoon': true
   },
   {
     'id': 13,
+    'name': "Naija Jollof Pasta",
+    'ingredients': 'Our twist on the classic Jollof - al dente paster simmered in smoky tomato-pepper sauce, with sauteed onions, belle peppers, and spiced beef or chicken.',
+    'nutritionInfo': ['Calories: ~280', 'Fat: 14g'],
+    'alergies': 'None',
+    'amount': 3_000,
+    'image': pasta,
+    'categories': ['Beef: 3,000', 'Chicken: 6,500']
+  },
+  {
+    'id': 14,
     'name': "Spicy Noodles",
     'ingredients': "Hot, steamy noodles tossed in a flavorful pepper blend.",
     'nutritionInfo': ['Calories: ~480', 'Fat: 22g', 'Carbohydrates: 62g', 'Protein: 7g', 'Protein: 12g'],
     'alergies': 'Dairy, Gluten',
     'amount': 1800,
     'image': noodles,
+    'categories': ['Regular: 2,000', 'Small: 1,700', 'Jumbo: 1,700']
   },
   {
-    'id': 14,
+    'id': 15,
     'name': "Beef Shawarma",
     'ingredients': "Packed with juicy fillings, sauces, and grilled perfection.",
     'nutritionInfo': ['Calories: ~430', 'Fat: 18g', 'Carbohydrates: 64g', 'Protein: 5g'],
     'alergies': 'Gluten',
     'amount': 4000,
     'image': beefSharwama,
+    'comingSoon': true
   },
   {
-    'id': 15,
+    'id': 16,
     'name': "White Rice and Stew",
     'ingredients': "Fluffy long-grain white rice served with rich tomato stew made from fresh peppers, onions, and spices.",
     'nutritionInfo': ['Calories: ~380 kcal', 'Carbs: 70g', 'Protein: 8g', 'Fat: 9g'],
     'alergies': 'May contain traces of peanuts if cooked with groundnut oil.',
-    'amount': 6500,
+    'amount': 3500,
     'image': rice,
-  },
-  {
-    'id': 16,
-    'name': "Peppered Chicken",
-    'ingredients': "Juicy grilled or fried chicken tossed in a hot pepper sauce. Choose wings, drumsticks, or grilled thighs.",
-    'nutritionInfo': ['Calories: ~220 kcal', 'Protein: 18g', 'Fat: 15g'],
-    'alergies': 'None (Check for pepper sensitivity)',
-    'amount': 1200,
-    'image': pepperedChicken,
-    'chicken': '/ 1 Drumstick'
+    'comingSoon': true
   },
   {
     'id': 17,
+    'name': "Chicken and Chips",
+    'ingredients': "Juicy grilled or fried chicken tossed in a hot pepper sauce. Choose wings, drumsticks, or grilled thighs.",
+    'nutritionInfo': ['Calories: ~220 kcal', 'Protein: 18g', 'Fat: 15g'],
+    'alergies': 'None (Check for pepper sensitivity)',
+    'amount': 3500,
+    'image': thirdCardImage,
+    'chicken': '/ 1 Drumstick'
+  },
+  {
+    'id': 18,
     'name': "Jollof Rice",
     'ingredients': "Smoky party-style jollof rice cooked in rich tomato sauce, served hot with veggies or optional proteins.",
     'nutritionInfo': ['Calories: ~420 kcal', 'Carbs: 75g', 'Protein: 10g', 'Fat: 12g'],
     'alergies': 'None (Check for sensitivity to tomatoes or pepper)',
-    'amount': 1500,
+    'amount': 3500,
     'image': jollofRice,
     'chicken': '1'
   },
   {
-    'id': 18,
+    'id': 19,
     'name': "Peppered Beef",
     'ingredients': "Tender beef chunks simmered and stir-fried in spicy pepper sauce. Perfect side for rice or as a standalone delight.",
     'nutritionInfo': ['Calories: ~300 kcal', 'Protein: 25g', 'Fat: 18g'],
     'alergies': 'None',
-    'amount': 1500,
+    'amount': 2000,
     'image': pepperedBeef,
-    'chicken': '1'
+    'beef': '/10 pieces'
   },
   {
-    'id': 19,
+    'id': 20,
     'name': "Barbecue Fish",
     'ingredients': "Grilled whole tilapia or croaker, seasoned and basted in spicy marinade. Served with sides like Boli or salad.",
     'nutritionInfo': ['Calories: ~600', 'Fat: 22g', 'Carbohydrates: 80g', 'Protein: 16g'],
     'alergies': 'Gluten, Dairy',
-    'amount': 3000,
+    'amount': 11000,
     'image': barbecue,
-    'barbecue': '/ ft'
   },
   {
-    'id': 20,
+    'id': 21,
     'name': "Boli (Grilled Plantain)",
     'ingredients': "Ripe plantain grilled to perfection, served with groundnut sauce or pepper mix.",
     'nutritionInfo': ['Calories: ~230 kcal', 'Carbs: 50g', 'Fiber: 4g'],
     'alergies': 'May contain groundnut (optional sauce)',
     'amount': 1000,
     'image': boli,
+    'comingSoon': true
   },
   {
-    'id': 21,
+    'id': 22,
     'name': "Fried Rice",
     'ingredients': "Savory stir-fried rice with veggies, sweet corn, green peas, and optional protein.",
     'nutritionInfo': ['Calories: ~400 kcal', 'Carbs: 65g', 'Protein : 10g', 'Fat : 11g'],
     'alergies': 'None (Check for vegetable allergies)',
-    'amount': 2300,
+    'amount': 4000,
     'image': friedRice,
     'chicken': '1'
   },
   {
-    'id': 22,
+    'id': 23,
     'name': "Boiled Yam & Egg Sauce",
     'ingredients': "Soft boiled yam slices served with spicy egg and tomato sauce. A classic and hearty dish.",
     'nutritionInfo': ['Calories: ~350 kcal', 'Carbs: 60g', 'Protein : 12g', 'Fat : 10g'],
@@ -253,43 +276,47 @@ export const productItems = [
     'image': yamEgg,
   },
   {
-    'id': 23,
+    'id': 24,
     'name': "Buffalo Wings",
     'ingredients': "Chicken wings, buffalo sauce, celery sticks, blue cheese dip",
     'nutritionInfo': ['Calories: ~430 kcal', 'Fat: 31g', 'Carbohydrates: 6g', 'Protein: 31g'],
     'alergies': 'Dairy (blue cheese dip)',
     'amount': 2500,
     'image': buffaloWings,
+    'comingSoon': true
   },
   {
-    'id': 24,
+    'id': 25,
     'name': "Classic Caesar Salad",
     'ingredients': "Romaine lettuce, Parmesan cheese, Croutons, Caesar dressing (anchovies, eggs, Parmesan)",
     'nutritionInfo': ['Calories: ~310', 'Fat: 24g', 'Carbohydrates: 17g', 'Protein: 8g'],
     'alergies': 'Dairy, Gluten, Eggs',
     'amount': 12500,
     'image': caesarSalad,
+    'comingSoon': true
   },
   {
-    'id': 25,
+    'id': 26,
     'name': "Loaded Potato Wedges",
     'ingredients': "Crispy potato wedges, cheddar cheese, bacon bits, sour cream, chives",
     'nutritionInfo': ['Calories: ~520', 'Fat: 28g', 'Carbohydrates: 52g', 'Protein: 12g'],
     'alergies': 'Dairy, Gluten',
     'amount': 16500,
     'image': loadedPotato,
+    'comingSoon': true
   },
   {
-    'id': 26,
+    'id': 27,
     'name': "Chicken Shawarma",
     'ingredients': "Packed with juicy fillings, sauces, and grilled perfection.",
     'nutritionInfo': ['Calories: ~320', 'Fat: 17g', 'Carbohydrates: 29g', 'Protein: 14g'],
     'alergies': 'Gluten',
     'amount': 2500,
     'image': chickenSharwama,
+    'categories': ['Small: 2,500', 'Large: 3,000', 'Special: 4,000'],
   },
   {
-    'id': 27,
+    'id': 28,
     'name': "Chicken Chips",
     'ingredients': "Choice of wings or drumsticks with crispy yam chips.",
     'nutritionInfo': ['Calories: ~300', 'Fat: 15g', 'Carbohydrates: 28g', 'Protein: 12g'],
@@ -298,32 +325,23 @@ export const productItems = [
     'image': chickenChips,
   },
   {
-    'id': 28,
+    'id': 29,
     'name': "BBQ Blaze",
     'ingredients': "Grilled chicken, red onions, smoky BBQ sauce",
     'nutritionInfo': ['Calories: ~290', 'Fat: 12g', 'Carbohydrates: 29g', 'Protein: 15g'],
     'alergies': 'Gluten',
     'amount': 8800,
     'image': bbqBlaze,
-  },
-  {
-    'id': 29,
-    'name': "Yam & Egg Sauce",
-    'ingredients': "Golden yam slices served with our rich, peppered egg sauce",
-    'nutritionInfo': ['Calories: ~220', 'Fat: 10g', 'Carbohydrates: 26g', 'Protein: 9g'],
-    'alergies': 'Diary, Gluten',
-    'amount': 3500,
-    'image': yamEggSauce,
+    'comingSoon': true
   },
   {
     'id': 30,
-    'name': "Sparkling Water",
-    'ingredients': "Carbonated water",
-    'nutritionInfo': ['Calories: 0', 'Fat: 0g', 'Carbohydrates: 0g', 'Protein: 0g'],
-    'alergies': 'None',
-    'amount': 1800,
-    'image': sparklingWater,
-    'volume': '1L'
+    'name': "Yam & Egg Sauce",
+    'ingredients': "Golden yam slices served with our rich, peppered egg sauce",
+    'nutritionInfo': ['Calories: ~220', 'Fat: 10g', 'Carbohydrates: 26g', 'Protein: 9g'],
+    'alergies': 'Diary',
+    'amount': 4000,
+    'image': yamEggSauce,
   },
   {
     'id': 31,
@@ -333,7 +351,8 @@ export const productItems = [
     'alergies': 'None',
     'amount': 2800,
     'image': classicCola,
-    'volume': '1L'
+    'volume': '1L',
+    'comingSoon': true
   },
   {
     'id': 32,
@@ -343,17 +362,23 @@ export const productItems = [
     'alergies': 'None',
     'amount': 2800,
     'image': lemonIce,
-    'volume': '1L'
+    'volume': '1L',
+    'comingSoon': true
   },
   {
     'id': 33,
     'name': "Coconut Water Cooler",
     'ingredients': "Fresh coconut water, lime juice, mint leaves, ice",
-    'nutritionInfo': ['Calories: 60', 'Fat: 0g', 'Carbohydrates: 15g', 'Protein: 0g'],
+    'nutritionInfo': ['Calories: 60',
+      'Fat: 0g',
+      'Carbohydrates: 15g',
+      'Protein: 0g'
+    ],
     'alergies': 'None',
     'amount': 2800,
     'image': coconutWater,
-    'volume': '1L'
+    'volume': '1L',
+    'comingSoon': true
   },
   {
     'id': 34,
@@ -363,7 +388,8 @@ export const productItems = [
     'alergies': 'None',
     'amount': 2000,
     'image': orangeJuice,
-    'volume': '1L'
+    'volume': '1L',
+    'comingSoon': true
   },
   {
     'id': 35,
@@ -373,7 +399,8 @@ export const productItems = [
     'alergies': 'Dairy',
     'amount': 6800,
     'image': strawberySmoothie,
-    'volume': '1L'
+    'volume': '1L',
+    'comingSoon': true
   },
   {
     'id': 36,
@@ -383,28 +410,30 @@ export const productItems = [
     'alergies': 'none',
     'amount': 2800,
     'image': brewCoffee,
-    'volume': '1L'
+    'volume': '1L',
+    'comingSoon': true
   },
-  // --- New items added below ---
   {
     'id': 37,
     'name': "Hot Chocolate",
     'ingredients': "Milk, cocoa powder, sugar, whipped cream",
     'nutritionInfo': ['Calories: 250', 'Fat: 11g', 'Carbohydrates: 32g', 'Protein: 8g'],
-    'alergies': 'Diary', // Note: "Diary" seems like a typo for "Dairy" but kept as is from source
+    'alergies': 'Diary',
     'amount': 2800,
     'image': chocolate,
-    'volume': '1L'
+    'volume': '1L',
+    'comingSoon': true
   },
   {
     'id': 38,
     'name': "Beer Float",
     'ingredients': "beer, vanilla ice cream",
     'nutritionInfo': ['Calories: 280', 'Fat: 8g', 'Carbohydrates: 48g', 'Protein: 4g'],
-    'alergies': 'Diary', // Note: "Diary" seems like a typo for "Dairy" but kept as is from source
+    'alergies': 'Diary',
     'amount': 2800,
     'image': beerFloat,
-    'volume': '1L'
+    'volume': '1L',
+    'comingSoon': true
   },
   {
     'id': 39,
@@ -414,7 +443,8 @@ export const productItems = [
     'alergies': 'None',
     'amount': 1500,
     'image': soda,
-    'volume': '1L'
+    'volume': '1L',
+    'comingSoon': true
   },
   {
     'id': 40,
@@ -424,14 +454,16 @@ export const productItems = [
     'alergies': 'Alcohol',
     'amount': 2500,
     'image': zoboMojitos,
+    'comingSoon': true
   },
   {
     'id': 41,
     'name': "Naija Sunrise",
-    'ingredients': "Breeded mozzarella cheese sticks, marinara sauce for dipping", // This seems like a mismatch for a drink named "Naija Sunrise" but kept as is from source
+    'ingredients': "Breeded mozzarella cheese sticks, marinara sauce for dipping",
     'nutritionInfo': ['Calories: 450', 'Fat: 25g', 'Carbohydrates: 39g', 'Protein: 18g'],
     'alergies': 'Dairy, Gluten, Eggs',
     'amount': 2800,
     'image': naijaSunrise,
+    'comingSoon': true
   },
 ];

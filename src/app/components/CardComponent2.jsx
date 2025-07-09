@@ -17,7 +17,7 @@ const CardComponent2 = forwardRef(({black, handleClick, title = '', src, descrip
           </div>
         </ul>
         <div className="flex items-center gap-5 relative z-10">
-            <button onClick={handleClick} className="py-2 p px-8 bg-[#fff] text-[#1a1a1a] rounded-3xl relative">
+            <button className="py-2 p px-8 bg-[#fff] text-[#1a1a1a] rounded-3xl relative">
               {order}
             </button>
             <h1 className="text-2xl font-semibold flex gap-2 items-center">{amount}<span className='font-normal text-sm md:text-md'>{lightAmount}</span></h1>

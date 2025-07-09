@@ -69,7 +69,7 @@ const page = () => {
                         </form>
                     </div>
                 </div>
-                <div className="grid md:grid-cols-5 grid-cols-2 items-start gap-3">
+                <div className="grid md:grid-cols-4 grid-cols-2 items-start gap-3">
                     <LocationCardComponent onclick={() => setLocation('portharcourt')} src={portHarcourt} locationName={`Port Harcourt`} />
                     <LocationCardComponent onclick={() => setLocation('oyigbo')} bg={`bg-[#ff91008f]`} src={Oyigbo} locationName={`Oyigbo`} />
                     <LocationCardComponent onclick={() => setLocation('eleme')} src={eleme} locationName={`Eleme`} />

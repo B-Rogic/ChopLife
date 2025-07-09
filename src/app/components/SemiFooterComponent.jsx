@@ -67,7 +67,7 @@ const SemiFooterComponent = ({className}) => {
             <div className="flex flex-col md:gap-10 gap-4 md:my-0 my-5">
             <h1 className='md:text-6xl text-3xl md:mt-0 mt-10 font-bold'>Delicious Deals, <br /> Just for You</h1>
             <p className="text-xl">Sign up for our newsletter and receive exclusive offers on new menus</p>
-            <form action="https://formsubmit.co/emmanueltech2019.com" method='POST' className='flex flex-col md:gap-10 gap-4'>
+            <form action="https://formsubmit.co/emmanueltech2019@gmail.com" method='POST' className='flex flex-col md:gap-10 gap-4'>
               <label htmlFor="email">
                   <input className='w-full rounded-3xl bg-white p-3 px-10 border-none outline-none' type="email" name="email" id="email" placeholder='youremail@email.com' required />
               </label>
