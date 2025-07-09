@@ -171,6 +171,9 @@ const page = () => {
     const handleBack = () => {
         setFilteredData([]);
         setIsSearching(false);
+        if(inputRef.current) {
+            inputRef.current.value = '';
+        }
     }
 
     return (
