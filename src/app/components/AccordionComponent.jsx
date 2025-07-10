@@ -1,12 +1,9 @@
 'use client'
-import React, { useState, useRef } from 'react'
+import React, { useState } from 'react'
 import { FaChevronDown } from 'react-icons/fa'
 
 const AccordionComponent = () => {
-    const accordionRef = useRef(null)
-    const accordionRef1 = useRef(null)
-    const accordionRef2 = useRef(null)
-    const [active, setActive] = useState('');
+    const [active, setActive] = useState();
     const itemsId ={ 
         item1: 'first',
         item2: 'second',
@@ -31,8 +28,8 @@ const AccordionComponent = () => {
                 </div>
                 <FaChevronDown className={`${active === itemsId.item1 ? 'rotate-180' : ''} transition-rotate duration-1000 text-xl`} />
             </div>
-            <div ref={accordionRef} className={`text-sm flex flex-col flex-grow gap-3 px-10 rounded-b-2xl bg-white overflow-hidden ${active === itemsId.item1 ? 'transition-padding duration-1000' : ' pt-0 pb-0 transition-padding duration-1000'}`} style={{
-                height: active === itemsId.item1 ? `${accordionRef.current?.scrollHeight}` : '0px',
+            <div className={`text-sm flex flex-col flex-grow gap-3 px-10 rounded-b-2xl bg-white overflow-hidden ${active === itemsId.item1 ? 'transition-padding duration-1000' : ' pt-0 pb-0 transition-padding duration-1000'}`} style={{
+                height: active === itemsId.item1 ? '300px' : '0px',
             }}>
                 <p className="font-bold">Obio Akpor Pickup Hub</p>
                 <div className="flex flex-col gap-2 ">
@@ -40,7 +37,7 @@ const AccordionComponent = () => {
                         <p className="font-bold">Location: <span className="font-light"> 46, Oroigwe Road, Obio Akpor, Rivers.</span></p>
                     </div>
                     <div className="flex gap-5 items-center">
-                        <p className="font-bold">Hours:<span className="font-light">10 AM - 12 AM, Mon-Sunday</span></p>
+                        <p className="font-bold">Hours:<span className="font-light">10 AM - 11 PM, Mon-Sunday</span></p>
                     </div>
                     <div className="flex gap-5 items-center">
                         <p className="font-bold">Note: <span className="font-light">Fast pickup for lunch and dinner specials</span></p>
@@ -58,8 +55,8 @@ const AccordionComponent = () => {
                 </div>
                 <FaChevronDown className={`${active === itemsId.item2 ? 'rotate-180' : ''} transition-rotate duration-1000 text-xl`} />
             </div>
-            <div ref={accordionRef1} className={`text-sm flex flex-col flex-grow gap-3 px-10 rounded-b-2xl bg-white overflow-hidden ${active === itemsId.item2 ? 'transition-padding duration-1000' : 'pb-0 transition-padding duration-1000'}`} style={{
-                height: active === itemsId.item2 ? `${accordionRef.current?.scrollHeight}` : '0px',
+            <div className={`text-sm flex flex-col flex-grow gap-3 px-10 rounded-b-2xl bg-white overflow-hidden ${active === itemsId.item2 ? 'transition-padding duration-1000' : 'pb-0 transition-padding duration-1000'}`} style={{
+                height: active === itemsId.item2 ? '300px' : '0px',
             }}>
                 <p className="font-bold">Obio Akpor Pickup Hub</p>
                 <div className="flex flex-col gap-2 ">
@@ -67,7 +64,7 @@ const AccordionComponent = () => {
                         <p className="font-bold">Location: <span className="font-light"> 46, Oroigwe Road, Obio Akpor, Rivers.</span></p>
                     </div>
                     <div className="flex gap-5 items-center">
-                        <p className="font-bold">Hours:<span className="font-light">10 AM - 12 AM, Mon-Sunday</span></p>
+                        <p className="font-bold">Hours:<span className="font-light">10 AM - 11 PM, Mon-Sunday</span></p>
                     </div>
                     <div className="flex gap-5 items-center">
                         <p className="font-bold">Note: <span className="font-light">Fast pickup for lunch and dinner specials</span></p>
@@ -85,8 +82,8 @@ const AccordionComponent = () => {
                 </div>
                 <FaChevronDown className={`${active === itemsId.item3 ? 'rotate-180' : ''} transition-rotate duration-1000 text-xl`} />
             </div>
-            <div ref={accordionRef2} className={`text-sm flex flex-col gap-3 px-10 rounded-b-2xl bg-white overflow-hidden ${active === itemsId.item3 ? ' pt-5 pb-10 transition-padding duration-1000' : ' pt-0 pb-0 transition-padding duration-1000'}`} style={{
-                height: active === itemsId.item3 ? `${accordionRef.current?.scrollHeight}` : '0px',
+            <div className={`text-sm flex flex-col gap-3 px-10 rounded-b-2xl bg-white overflow-hidden ${active === itemsId.item3 ? ' pt-5 pb-10 transition-padding duration-1000' : ' pt-0 pb-0 transition-padding duration-1000'}`} style={{
+                height: active === itemsId.item3 ? `300px` : '0px',
             }}>
                 <p className="font-bold">Obio Akpor Pickup Hub</p>
                 <div className="flex flex-col gap-2 ">
@@ -94,7 +91,7 @@ const AccordionComponent = () => {
                         <p className="font-bold">Location: <span className="font-light"> 46, Oroigwe Road, Obio Akpor, Rivers.</span></p>
                     </div>
                     <div className="flex gap-5 items-center">
-                        <p className="font-bold">Hours:<span className="font-light">10 AM - 12 AM, Mon-Sunday</span></p>
+                        <p className="font-bold">Hours:<span className="font-light">10 AM - 11 PM, Mon-Sunday</span></p>
                     </div>
                     <div className="flex gap-5 items-center">
                         <p className="font-bold">Note: <span className="font-light">Fast pickup for lunch and dinner specials</span></p>
