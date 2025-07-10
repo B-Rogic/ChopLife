@@ -257,10 +257,10 @@ const page = () => {
                                             </div>
                                             <div className="flex justify-between items-center">
                                                 <button onClick={() => {item.comingSoon ? null : handledCartClick(item); handleBack()}} className={`py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl ${item.comingSoon ? 'opacity-50 cursor-not-allowed' : ''}`}>{item.comingSoon ? 'Coming Soon' : 'Add To Cart'}</button>
-                                                <h3 className="font-semibold text-3xl">₦{item.comingSoon ? '0' : item.amount.toLocaleString(undefined, {
+                                                <p className="font-semibold text-3xl">₦{item.comingSoon ? '0' : item.amount.toLocaleString(undefined, {
                                                     minimumFractionDigits: 2,
                                                     maximumFractionDigits: 2
-                                                })} <span className="text text-gray-300 text-sm">{item.chicken}</span></h3>
+                                                })} <span className="text text-gray-300 text-sm">{item.chicken}</span></p>
                                             </div>
                                             <div className="flex flex-col gap-2 items-end">
                                                 {(item.categories || []).map((category, index) => (
@@ -311,10 +311,10 @@ const page = () => {
                                                     </div>
                                                     <div className="flex justify-between items-center">
                                                         <button onClick={() => {item.comingSoon ? null : handledCartClick(item)}} className={`py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl ${item.comingSoon ? 'opacity-50 cursor-not-allowed' : ''}`}>{item.comingSoon ? 'Coming Soon' : 'Add To Cart'}</button>
-                                                        <h3 className="font-semibold text-3xl">₦{item.comingSoon ? '0' : item.amount.toLocaleString(undefined, {
+                                                        <p className="font-semibold text-3xl">₦{item.comingSoon ? '0' : item.amount.toLocaleString(undefined, {
                                                     minimumFractionDigits: 2,
                                                     maximumFractionDigits: 2
-                                                })} <span className="text text-gray-300 text-sm">{item.chicken}</span></h3>
+                                                })} <span className="text text-gray-300 text-sm">{item.chicken}</span></p>
                                                     </div>
                                                     <div className="flex flex-col gap-2 items-end">
                                                         {(item.categories || []).map((category, index) => (
@@ -360,10 +360,10 @@ const page = () => {
                                                     </div>
                                                     <div className="flex justify-between items-center">
                                                         <button onClick={() => {item.comingSoon ? null : handledCartClick(item)}} className={`py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl ${item.comingSoon ? 'opacity-50 cursor-not-allowed' : ''}`}>{item.comingSoon ? 'Coming Soon' : 'Add To Cart'}</button>
-                                                        <h3 className="font-semibold text-3xl">₦{item.comingSoon ? '0' : item.amount.toLocaleString(undefined, {
+                                                        <p className="font-semibold text-3xl">₦{item.comingSoon ? '0' : item.amount.toLocaleString(undefined, {
                                                             minimumFractionDigits: 2,
                                                             maximumFractionDigits: 2
-                                                        })} <span className="text text-gray-300 text-sm">{item.chicken}</span></h3>
+                                                        })} <span className="text text-gray-300 text-sm">{item.chicken}</span></p>
                                                     </div>
                                                     <div className="flex flex-col gap-2 items-end">
                                                         {(item.categories || []).map((category, index) => (
@@ -409,10 +409,10 @@ const page = () => {
                                                     </div>
                                                     <div className="flex justify-between items-center">
                                                         <button onClick={() => {item.comingSoon ? null : handledCartClick(item)}} className={`py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl ${item.comingSoon ? 'opacity-50 cursor-not-allowed' : ''}`}>{item.comingSoon ? 'Coming Soon' : 'Add To Cart'}</button>
-                                                        <h3 className="font-semibold text-3xl">₦{item.comingSoon ? '0' : item.amount.toLocaleString(undefined, {
+                                                        <p className="font-semibold text-3xl">₦{item.comingSoon ? '0' : item.amount.toLocaleString(undefined, {
                                                             minimumFractionDigits: 2,
                                                             maximumFractionDigits: 2
-                                                        })} <span className="text text-gray-300 text-sm">{item.chicken}</span></h3>
+                                                        })} <span className="text text-gray-300 text-sm">{item.chicken}</span></p>
                                                     </div>
                                                     <div className="flex flex-col gap-2 items-end">
                                                         {(item.categories || []).map((category, index) => (
@@ -458,10 +458,10 @@ const page = () => {
                                                     </div>
                                                     <div className="flex justify-between items-center">
                                                         <button onClick={() => {item.comingSoon ? null : handledCartClick(item)}} className={`py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl ${item.comingSoon ? 'opacity-50 cursor-not-allowed' : ''}`}>{item.comingSoon ? 'Coming Soon' : 'Add To Cart'}</button>
-                                                        <h3 className="font-semibold text-3xl">₦{item.comingSoon ? '0' : item.amount.toLocaleString(undefined, {
+                                                        <p className="font-semibold text-3xl">₦{item.comingSoon ? '0' : item.amount.toLocaleString(undefined, {
                                                             minimumFractionDigits: 2,
                                                             maximumFractionDigits: 2
-                                                        })} <span className="text text-gray-300 text-sm">{item.chicken}</span></h3>
+                                                        })} <span className="text text-gray-300 text-sm">{item.chicken}</span></p>
                                                     </div>
                                                     <div className="flex flex-col gap-2 items-end">
                                                         {(item.categories || []).map((category, index) => (
@@ -510,10 +510,10 @@ const page = () => {
                                                     </div>
                                                     <div className="flex justify-between items-center">
                                                         <button onClick={() => {item.comingSoon ? null : handledCartClick(item)}} className={`py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl ${item.comingSoon ? 'opacity-50 cursor-not-allowed' : ''}`}>{item.comingSoon ? 'Coming Soon' : 'Add To Cart'}</button>
-                                                        <h3 className="font-semibold text-3xl">₦{item.comingSoon ? '0' : item.amount.toLocaleString(undefined, {
+                                                        <p className="font-semibold text-3xl">₦{item.comingSoon ? '0' : item.amount.toLocaleString(undefined, {
                                                             minimumFractionDigits: 2,
                                                             maximumFractionDigits: 2
-                                                        })} <span className="text text-gray-300 text-sm">{item.chicken}</span></h3>
+                                                        })} <span className="text text-gray-300 text-sm">{item.chicken}</span></p>
                                                     </div>
                                                     <div className="flex flex-col gap-2 items-end">
                                                         {(item.categories || []).map((category, index) => (
@@ -562,10 +562,10 @@ const page = () => {
                                                     </div>
                                                     <div className="flex justify-between items-center">
                                                         <button onClick={() => {item.comingSoon ? null : handledCartClick(item)}} className={`py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl ${item.comingSoon ? 'opacity-50 cursor-not-allowed' : ''}`}>{item.comingSoon ? 'Coming Soon' : 'Add To Cart'}</button>
-                                                        <h3 className="font-semibold text-3xl">₦{item.comingSoon ? '0' : item.amount.toLocaleString(undefined, {
+                                                        <p className="font-semibold text-3xl">₦{item.comingSoon ? '0' : item.amount.toLocaleString(undefined, {
                                                             minimumFractionDigits: 2,
                                                             maximumFractionDigits: 2
-                                                        })} <span className="text text-gray-300 text-sm">{item.chicken}</span></h3>
+                                                        })} <span className="text text-gray-300 text-sm">{item.chicken}</span></p>
                                                     </div>
                                                     <div className="flex flex-col gap-2 items-end">
                                                         {(item.categories || []).map((category, index) => (
@@ -614,10 +614,10 @@ const page = () => {
                                                     </div>
                                                     <div className="flex justify-between items-center">
                                                         <button onClick={() => {item.comingSoon ? null : handledCartClick(item)}} className={`py-2 flex-shrink-0 px-8 bg-[#ff003c] hover:scale-105 transition-transform duration-200 ease-in-out text-white rounded-3xl ${item.comingSoon ? 'opacity-50 cursor-not-allowed' : ''}`}>{item.comingSoon ? 'Coming Soon' : 'Add To Cart'}</button>
-                                                        <h3 className="font-semibold text-3xl">₦{item.comingSoon ? '0' : item.amount.toLocaleString(undefined, {
+                                                        <p className="font-semibold text-3xl">₦{item.comingSoon ? '0' : item.amount.toLocaleString(undefined, {
                                                             minimumFractionDigits: 2,
                                                             maximumFractionDigits: 2
-                                                        })} <span className="text text-gray-300 text-sm">{item.chicken}</span></h3>
+                                                        })} <span className="text text-gray-300 text-sm">{item.chicken}</span></p>
                                                     </div>
                                                     <div className="flex flex-col gap-2 items-end">
                                                         {(item.categories || []).map((category, index) => (

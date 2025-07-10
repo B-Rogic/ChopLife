@@ -77,6 +77,9 @@ const page = () => {
                     <LocationCardComponent onclick={() => setLocation('eleme')} src={eleme} locationName={`Eleme`} />
                     <LocationCardComponent onclick={() => setLocation('obioakpor')} bg={`bg-[#ff91008f]`} src={obioAkpor} locationName={`Obio Akpor`} />
                 </div>
+                <div className="w-full h-[15rem] mb-10">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3975.3862677507027!2d7.0377999740725485!3d4.874792340125649!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1069d302677da06f%3A0xc6c83be09115c1b1!2sChoplife%20Shawarma!5e0!3m2!1sen!2sng!4v1752174534906!5m2!1sen!2sng" width="100%" height="100%" style={{border: 0}}></iframe>
+                </div>
                 <AccordionComponent />
             </div>
         </div>

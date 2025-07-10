@@ -131,7 +131,7 @@ const page = () => {
                   </div>
                 </div>
               ))}
-              <h2 className="my-3 font-bold text-xl"><span className="font-lighter">Total:</span> ₦{getTotalPrice().toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</h2>
+              <p className="my-3 font-bold text-xl"><span className="font-lighter">Total:</span> ₦{getTotalPrice().toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
             </div>
           )}
         <div className="flex gap-2 items-center flex-col justify-center relative">

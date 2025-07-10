@@ -37,9 +37,6 @@ const page = () => {
             <Image src={galleryEleventhImage} alt='gallery first image' width={1000} height={1000} className='rounded-2xl flex-shrink-0 md:w-[16rem] md:h-[20rem] object-cover' />
             <Image src={galleryTwelveImage} alt='gallery first image' width={1000} height={1000} className='rounded-2xl flex-shrink-0 md:w-[16rem] md:h-[20rem] object-cover' />
         </div>
-        <div className="w-full h-[15rem] mb-10">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d15901.532604245309!2d7.041878!3d4.875319!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNMKwNTInMzEuMiJOIDfCsDAyJzMwLjgiRQ!5e0!3m2!1sen!2sus!4v1750749122419!5m2!1sen!2sus" width="100%" height="100%" style={{border: 0}} ></iframe>
-        </div>
       </div>
     </div>
   )

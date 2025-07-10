@@ -213,8 +213,6 @@ const layout = ({children}) => {
             </div>
             <div className="flex flex-col md:gap-4 gap-3 flex-shrink-0 md:my-0 mt-10">
                 <p className="text-white md:text-md text-sm md:mb-8 mb-3">USEFUL</p>
-              <Link href={`/home/privacy-policy`} className='text-md text-white font-semibold hover:underline'>Privacy Policy</Link>
-              <Link href={`/home/cookie-policy`} className='text-md text-white font-semibold hover:underline'>Cookie Policy</Link>
               <Link href={`/home/terms-conditions`} className='text-md text-white font-semibold hover:underline'>Terms & Conditions</Link>
               <Link href={`/home/refunds-cancellation`} className='text-md text-white font-semibold hover:underline'>Refunds & Cancellation</Link>
             </div>

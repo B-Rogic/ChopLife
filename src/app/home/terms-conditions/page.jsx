@@ -7,103 +7,85 @@ const page = () => {
         <div className="md:p-20 md:py-32 pt-32 px-5 relative backdrop-blur-xl flex flex-col md:gap-10 gap-5">
             <div className="md:w-full mb-5">
                 <h1 className="text-2xl md:text-8xl font-bold leading-normal md:leading-snug">Terms & Conditions</h1>
-                <p className="md:text-xl text-xl">At <span className='font-bold'>Choplife</span>, we use cookies and similar trackig technologies to enhance your experience, analyze site usage, and personalize content. This Cookie Policy explains with cookies are, how we use them, and how you can manage your preferences.</p>
+                <p className="md:text-xl text-xl">Welcome to Choplife. These Terms and Conditions ("Terms") govern your use of our website, mobile app, and all related services provided by Choplife ("we," "us," or "our"). By using our services, you agree to these Terms.</p>
             </div>
             <div className="flex flex-col gap-5">
-                <p className="font-bold md:text-xl text-lg">1. Introduction</p>
-                <p className='md:text-lg text-sm'>These Terms and Conditions ("Terms") govern your access and use of the <span className="font-bold">Pepper</span> website, mobile app, and any other services provided by <span className="font-bold">Pepper</span> ("we," "us," or "our"). By using our Services, you agree to comply with these Terms.</p>
-                <p className='md:text-lg text-sm'>We reserve the right to modify or update these Terms at any time without prior notice. The most recent version of these Terms will always be available on your website. Continued use of the Services after any changes constitute your acceptance of the revised Terms.</p>
+                <p className="font-bold md:text-xl text-lg">1. Eligibility</p>
+                <p className='md:text-lg text-sm'>By using our services, you confirm that you are at least 16 years old or have reached the legal age of majority in your jurisdiction. If you are using Choplife on behalf of a business or organization, you confirm that you have teh authority to accept these Terms on their behalf.</p>
             </div>
             <div className="flex flex-col gap-5">
-                <p className="font-bold md:text-xl text-lg">2. Eligibility</p>
-                <p className='md:text-lg text-sm'>By using our Services, you fonfirm that you are at least 16 years old or have reached the legal age of majority in your jurisdiction. If you are using the Services on behalf of a business or organization, you represent and warrant that you have the authority to bind that entity to these Terms.</p>
+                <p className="font-bold md:text-xl text-lg">2. Use of Services</p>
+                <p className='md:text-lg text-sm'>You agree to use Choplife only for lawful purposes and in accordance with all applicable laws and regulations. You must not:</p>
+                <p className='text-sm'>Use our services for fraudulent, harmful, or illegal activities</p>
+                <p className='text-sm'>Interfere with or disrupt our systems or networks</p>
+                <p className='text-sm'>Attempt to gain unauthorized access to any part of our services</p>
+                <p className='text-sm'>Provide false or misleading information or impersonate another person</p>
+
             </div>
             <div className="flex flex-col gap-5">
-                <p className="font-bold md:text-xl text-lg">3. Use of Services</p>
-                <p className='md:text-lg text-sm'>You agree to use our Services for lawful purposes only and in compliance with all applicable laws and regulations. You are prohibited from:</p>
-                
-                <div className="flex flex-col gap-1">
-                    <div className="flex gap-3">
-                        <div className="rounded-full flex-shrink-0 w-[6px] mt-3 h-[6px] bg-[#1a1a1a]"></div>
-                        <p className='md:text-lg text-sm font-bold'><span className="font-light"><span className="italic">Using the Services to engage in any fraudulent or unlawful activity.</span></span></p>
-                    </div>
-                    <div className="flex gap-3">
-                        <div className="rounded-full flex-shrink-0 w-[6px] mt-3 h-[6px] bg-[#1a1a1a]"></div>
-                        <p className='md:text-lg text-sm font-bold'><span className="font-light"><span className="italic">Interfering with or disrupting the functionality of our services.</span></span></p>
-                    </div>
-                    <div className="flex gap-3">
-                        <div className="rounded-full flex-shrink-0 w-[6px] mt-3 h-[6px] bg-[#1a1a1a]"></div>
-                        <p className='md:text-lg text-sm font-bold'><span className="font-light"><span className="italic">Attempting to gain unauthorized access to our systems, data, or other users' information.</span></span></p>
-                    </div>
-                    <div className="flex gap-3">
-                        <div className="rounded-full flex-shrink-0 w-[6px] mt-3 h-[6px] bg-[#1a1a1a]"></div>
-                        <p className='md:text-lg text-sm font-bold'><span className="font-light"><span className="italic">Impersonating any person or entity or providing false information.</span></span></p>
-                    </div>
-                </div>
+                <p className="font-bold md:text-xl text-lg">3. Accounts and Security</p>
+                <p className='md:text-lg text-sm'>Some features of Choplife may require you to create an account. You are responsible for maintaining the confidentiality of your login credentials and for all activities that occur under your account.</p>
+                <p className='md:text-lg text-sm'>If you believe your account has been compromised, contact us immediately. Choplife is not responsible for losses resulting from unauthorized access cause by your failure to protect your account information.</p>
             </div>
             <div className="flex flex-col gap-5">
-                <p className="font-bold md:text-xl text-lg">4. Accounts and Security</p>
-                <p className='md:text-lg text-sm'>To access certain features of our Services, you may need to create an account with <span className="font-bold">Pepper</span>. You are responsible for maintaining the confidentiality of your account login credentials and for all activities that occur under your account.</p>
-                <p className='md:text-lg text-sm'>You agree to notify us immediately if you suspect any unauthorized use of your account or any other breach of security. <span className="font-bold">Pepper</span> will not be liable for any loss or damage resulting from your failure to safeguard your account information.</p>
+                <p className="font-bold md:text-xl text-lg">4. Orders and Payments</p>
+                <p className="font-bold md:text-xl text-lg">4.1 Placing an Order</p>
+                <p className='md:text-lg text-sm'>When placing an order, you confirm that all information provided is accurate and complete. Orders are subject to availability, and we reserve the right to cancel or refuse an order for any reason</p>
+                <p className="font-bold md:text-xl text-lg">4.2 Payments</p>
+                <p className='md:text-lg text-sm'>We accept various payment methods, including credit/debit cards and digital payment platforms. By submitting payment details, you authorize Choplife or our third-party payment providers to access your payment. All transactions are encrypted and secure.</p>
             </div>
             <div className="flex flex-col gap-5">
-                <p className="font-bold md:text-xl text-lg">5. Orders and Payments</p>
-                <p className="font-bold md:text-xl text-lg">5.1 Placing an Order</p>
-                <p className='md:text-lg text-sm'>When you place an order through our Services, you agree that all the informcation provided is accurate and complete. All orders are subject to availability, and we reserve the right to cancel or refuse any order for any reason.</p>
-                <p className="font-bold md:text-xl text-lg">5.2 Payments</p>
-                <p className='md:text-lg text-sm'>We accept various payment methods, including credit cards and online payment services. By providing your payment information, you authorize <span className='font-bold'>Pepper</span> or our third-party payment processors to charge thte total amount for your order, including applicable taxes and delivery fees. All payments are securely processed using industry-standard encryption.</p>
+                <p className="font-bold md:text-xl text-lg">5. Delivery and Pickup</p>
+                <p className="font-bold md:text-xl text-lg">5.1 Delivery</p>
+                <p className='md:text-lg text-sm'>Estimated delivery times are provided at checkout but may vary due to factors beyond our control. You are responsible for providing accurate delivery details. We reserve the right to limit delivery locations or cancel orders if delivery is not feasible.</p>
+                <p className="font-bold md:text-xl text-lg">5.2 Pickup</p>
+                <p className='md:text-lg text-sm'>If you select the pickup option, you agree to collect your order within the specified time. Failure to do so may result in your order being discarded, and no refund may be issued.</p>
             </div>
             <div className="flex flex-col gap-5">
-                <p className="font-bold md:text-xl text-lg">6. Delivery and Pickup</p>
-                <p className="font-bold md:text-xl text-lg">6.1 Delivery</p>
-                <p className='md:text-lg text-sm'>Delivery times at the time of ordering are estimates and may vary based on traffic, weather, or other unforeseen circumstances. WE are not liable for delays in delivery times. You are responsible for providing accurate delivery information. <span className="font-bold">Pepper</span> reserves the right to refuse delivery to certain locations.</p>
-                <p className="font-bold md:text-xl text-lg">6.2 Pickup</p>
-                <p className='md:text-lg text-sm'>When selecting the pickup option, you agree to collect your order within the specified time frame. If you fail to pick up your order, it may be disposed of, and you may not be eligible for a refund.</p>
+                <p className="font-bold md:text-xl text-lg">6. Cancellation, Returns & Refunds</p>
+                <p className="font-bold md:text-xl text-lg">6.1 Cancellations</p>
+                <p className='md:text-lg text-sm'>You may cancel your order shortly after placing it. If the order is already being prepared, cancellation may not be possible.</p>
+                <p className="font-bold md:text-xl text-lg">6.2 Refunds</p>
+                <p className='md:text-lg text-sm'>If you are unhappy with your order or experience a problem, please contac tus at info@chop-life.com within 24 hours. We will review your request and may offer a refund or replacement at our discretion.</p>
             </div>
             <div className="flex flex-col gap-5">
-                <p className="font-bold md:text-xl text-lg">7. Returns, Refunds, and Cancellations</p>
-                <p className="font-bold md:text-xl text-lg">7.1 Cancellations</p>
-                <p className='md:text-lg text-sm'>You may cancel your order within a reasonable time after placing it, subject to the preparation status of the order. If the order has already been prepared, it may not be eligible for cancellation or a refund.</p>
-                <p className="font-bold md:text-xl text-lg">7.2 Refunds</p>
-                <p className='md:text-lg text-sm'>If you are dissatisfied with your order or believe there has been an error, please contact us at [Insert Contact Email] within 24 hours. We will review your request and, at our discretion, issue a refund or replacement.</p>
+                <p className="font-bold md:text-xl text-lg">7. Intellectual Property</p>
+                <p className='md:text-lg text-sm'>All content on Choplife's platform——including text, images, branding, and media——is the property of Choplife or our content partners and is protected by intellectual property laws. You may not copy, reproduce, or distribute our content without prior written permission.</p>
             </div>
             <div className="flex flex-col gap-5">
-                <p className="font-bold md:text-xl text-lg">8. Intellectual Property</p>
-                <p className='md:text-lg text-sm'>All content on the <span className="font-bold">Pepper</span> website and app, including text, images, logos, graphics, and designs, is the property of <span className="font-bold">Pepper</span> or its licensors and is protected by copyright, trademark, and other intellectual property laws. You are granted a limited, non-exclusive, non-transferable licence to access and use the Services for personal, non-commercial purposes.</p>
-                <p className='md:text-lg text-sm'>You may not reproduce, distribute, or publicly display any part of our content without prior written consent from <span className="font-bold">Pepper</span></p>
+                <p className="font-bold md:text-xl text-lg">8. Third-Party Links</p>
+                <p className='md:text-lg text-sm'>Choplife may include links to third-party websites or services. We do not control or endorse these sites and are not responsible for their content or practices. Your interactions with third parties are your responsibility.</p>
             </div>
             <div className="flex flex-col gap-5">
-                <p className="font-bold md:text-xl text-lg">9. Third-Party Links</p>
-                <p className='md:text-lg text-sm'>Our Services may contain links to third-party websites or services that are not owned or controlled by <span className="font-bold">Pepper</span>. We are not responsible for the content, privacy practices, or policies of any third-party websites. Your interactions with these third parties are solely your responsibility.</p>
+                <p className="font-bold md:text-xl text-lg">9. Limitation of Liability</p>
+                <p className='md:text-lg text-sm'>To the fullest extent permitted by law, Choplife and its affiliates are not liable for indirect, incidental, or consequential damages, including lost profits or data, resulting from your use of our services.</p>
+                <p className='md:text-lg text-sm'>Our total liability to you for any claim related to an order will not exceed the amount paid for that order.</p>
             </div>
             <div className="flex flex-col gap-5">
-                <p className="font-bold md:text-xl text-lg">10. Limitation of Liability</p>
-                <p className='md:text-lg text-sm'>To the fullest extent permitted by law, <span className="font-bold">Pepper</span> and its affiliates, officers, emplyees, and agents will not be liable for any indirect, incidental, special, or consequential damages arising from your use of our Services, including bu tnot limited to loss of profits, data, or goodwill, even if we have been advised of the possibility of such damages.</p>
-                <p className='md:text-lg text-sm'>Our total liability to you for any claims arising from the use of our Services will not exceed the amount you paid to Pepper for the relevant order.</p>
+                <p className="font-bold md:text-xl text-lg">10. Disclaimer of Warranties</p>
+                <p className='md:text-lg text-sm'>Our services are provided "as is" and "as available" without warranties of any kind. We do not guarantee uninterrupted access, error-free functionality, or the absence of harmful components. Use our services at your own risk.</p>
             </div>
             <div className="flex flex-col gap-5">
-                <p className="font-bold md:text-xl text-lg">11. Disclaimer of Warranties</p>
-                <p className='md:text-lg text-sm'>Our Services are provided "as is" and "as available" without any warranties of any kind, whether express or implied. We do not guarantee that the Services will be available at all times, error-free, or free from viruses or harmful components, Your use of the Services is at your own risk.</p>
+                <p className="font-bold md:text-xl text-lg">11. Indemnification</p>
+                <p className='md:text-lg text-sm'>You agree to indemnify and hold Choplife and its affiliates harmless from any claims, damages, or losses resulting from your use of the services, your violation of these Terms, or your infringement of any third-party rights.</p>
             </div>
             <div className="flex flex-col gap-5">
-                <p className="font-bold md:text-xl text-lg">12. Indemnification</p>
-                <p className='md:text-lg text-sm'>You agree to indemnify and hold harmless <span className="font-bold">Pepper</span>, its affiliates, officers, employees, and agents from any claims, liabilities, damages, losses, or expenses, including reasonable attorney's fees, arising out of your use of the Services, violation of these Terms, of infringement of any third-party rights.</p>
+                <p className="font-bold md:text-xl text-lg">12. Governing Law</p>
+                <p className='md:text-lg text-sm'>These Terms are governed by the laws of Nigeria, without regard to conflict of law rules. Any disputes shall be subject to the jurisdiction of courts located in Rivers State, Nigeria.</p>
             </div>
             <div className="flex flex-col gap-5">
-                <p className="font-bold md:text-xl text-lg">13. Governing Law</p>
-                <p className='md:text-lg text-sm'>These Terms and any disputes arising out of or related to your use of the Services will be governed by and construed in accordance with the laws of [Insert Country/State], without regard to its conflict of law principles.</p>
+                <p className="font-bold md:text-xl text-lg">13. Termination</p>
+                <p className='md:text-lg text-sm'>We reserve the right to suspend or terminate your access to Choplife at any time, without notice, if we believe you have violated these Terms or acted in a way that harms other users or our business.</p>
             </div>
             <div className="flex flex-col gap-5">
-                <p className="font-bold md:text-xl text-lg">14. Termination</p>
-                <p className='md:text-lg text-sm'>We reserve the right to terminate or suspend your access to the Services at our discretion, without notice, for any conduct that we believe violates these Terms or is harmful to our users, us, or third parties.</p>
+                <p className="font-bold md:text-xl text-lg">14. Contact Us</p>
+                <p className='md:text-lg text-sm'>If you have any questions or concerns about these Terms, please contact us:</p>
+                <p className='md:text-lg text-sm'>Choplife</p>
+                <p className='md:text-lg text-sm'>46, Oriogwe Road</p>
+                <p className='md:text-lg text-sm'>Obio Akpor, Rivers, 500102</p>
+                <p className='md:text-lg text-sm'>Nigeria</p>
+                <p className='md:text-lg text-sm'>Email: info@chop-life.com</p>
             </div>
-            <div className="flex flex-col gap-5">
-                <p className="font-bold md:text-xl text-lg">15. Contact Us <span className="font-light">If you have any questions about our use of cookies or how to manage your preferences, please contact us at:</span>Choplife</p>
-            </div>
-            <div className="flex flex-col gap-5">
-                <p className='md:text-lg text-sm'>46, Oroigwe Road <br /> Obio Akpor, Rivers, 500102 <br /> Nigeria</p>
-            </div>
-            <p className="text-gray-400">Contact Us</p>
         </div>
     </div>
   )

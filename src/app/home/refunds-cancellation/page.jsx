@@ -6,7 +6,7 @@ const page = () => {
     <div className='w-full relative'>
         <div className="md:p-20 md:py-32 pt-32 px-5 relative backdrop-blur-xl flex flex-col md:gap-10 gap-5">
             <div className="md:w-full mb-5">
-                <h1 className="text-2xl md:text-8xl font-bold leading-normal md:leading-snug">Refunds & Refunds</h1>
+                <h1 className="text-2xl md:text-8xl font-bold leading-normal md:leading-snug">Refunds & Cancellation</h1>
                 <p className="md:text-xl text-xl">At <span className='font-bold'>Choplife</span>, we strive to ensure that every meal we serve meets your expectations. However, we understand that sometimes things don't go as planned. This Refunds & Cancellation Policy outlines the process for cancelling orders, requesting refunds, and how we handle such requests.</p>
             </div>
             <div className="flex flex-col gap-5">
@@ -26,7 +26,7 @@ const page = () => {
             </div>
             <div className="flex flex-col gap-5">
                 <p className="font-bold md:text-xl text-lg">1.2 How to Cancel</p>
-                <p className='md:text-lg text-sm'>To cancel your order, please contact us immediately via the <span className="font-bold">Pepper</span> app or website or call the restaurant directly. If your order is eligible for cancellation, we will process it, and you will not be charged.</p>
+                <p className='md:text-lg text-sm'>To cancel your order, please contact us immediately via <span className='font-bold'>info@chop-life.com</span>, website or call the restaurant directly. If your order is eligible fo rcancellation, we will process it, and you will not be charged.</p>
             </div>
             <div className="flex flex-col gap-5">
                 <p className="font-bold md:text-xl text-lg">1.3 Cancellation Fees</p>
@@ -39,7 +39,7 @@ const page = () => {
                 <div className="flex flex-col gap-1">
                     <div className="flex gap-3">
                         <div className="rounded-full flex-shrink-0 w-[6px] mt-3 h-[6px] bg-[#1a1a1a]"></div>
-                        <p className='md:text-lg text-sm font-bold'>Order Issues: <span className="font-light">I fyou receive an incorrect order, items are missing, or there are significant issues with your food, please contact us within <span className="font-bold">24 hours</span> of delivery or pickup to report the issue</span></p>
+                        <p className='md:text-lg text-sm font-bold'>Order Issues: <span className="font-light">If you receive an incorrect order, items are missing, or there are significant issues with your food, please contact us within <span className="font-bold">24 hours</span> of delivery or pickup to report the issue</span></p>
                     </div>
                     <div className="flex gap-3">
                         <div className="rounded-full flex-shrink-0 w-[6px] mt-3 h-[6px] bg-[#1a1a1a]"></div>
@@ -96,7 +96,7 @@ const page = () => {
                 <p className="font-bold md:text-xl text-lg">4.2 Incorect Delivery</p>
                 <p className='md:text-lg text-sm'>If you receive an incorrect order, please notify us immediately. We will arrange for a replacement or offer a refund for the incorrect items.</p>
                 <p className="font-bold md:text-xl text-lg">4.3 Missed Pickup</p>
-                <p className='md:text-lg text-sm'>If you miss your pickup window and your order is not collected within the specified time frame, <span className="font-bold">Pepper</span> reserves the right to dispose of the order, and no refund may be issued.</p>
+                <p className='md:text-lg text-sm'>If you miss your pickup window and your order is not collected within the specified time frame. We reserve the right to dispose of the order, and no refund may be issued.</p>
             </div>
             <div className="flex flex-col gap-5">
                 <p className="font-bold md:text-xl text-lg">5. Changes to Orders</p>
@@ -105,7 +105,7 @@ const page = () => {
             </div>
             <div className="flex flex-col gap-5">
                 <p className="font-bold md:text-xl text-lg">6. Contact Us</p>
-                <p className="font-light">If you have any questions about our use of cookies or how to manage your preferences, please contact us at:<span className="font-bold">Choplife</span></p>
+                <p className="font-light">If you have any questions about our use of Refund and Cancellations Policy or how to manage your orders, please contact us at:<span className="font-bold">info@chop-life.com</span></p>
             </div>
             <div className="flex flex-col gap-5">
                 <p className='md:text-lg text-sm'>46, Oroigwe Road <br /> Obio Akpor, Rivers, 500102 <br /> Nigeria</p>

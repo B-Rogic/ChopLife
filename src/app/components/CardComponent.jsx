@@ -12,7 +12,7 @@ const CardComponent = ({src, title = '', description = '', order = '', amount = 
               <button onClick={handleClick} className="py-2 px-8 bg-[#ff003c] text-white rounded-3xl relative">
                 {order}
               </button>
-              <h1 className="text-2xl font-semibold relative text-[#1a1a1a] flex flex-col"> <p className='flex items-center gap-2'><span className='text-sm'>from</span> {amount}</p> <br /> <span className='text-sm absolute bottom-0'>{regular}</span></h1>
+              <div className="text-2xl font-semibold relative text-[#1a1a1a] flex flex-col"> <p className='flex items-center gap-2'><span className='text-sm'>from</span> {amount}</p> <br /> <span className='text-sm absolute bottom-0'>{regular}</span></div>
           </div>
         </div>
     </div>

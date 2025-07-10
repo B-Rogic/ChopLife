@@ -4,10 +4,14 @@ import Image from 'next/image'
 import { gsap } from 'gsap'
 import carouselImage1 from '@/images/carouselImage1.jpg'
 import carouselImage2 from '@/images/carouselImage2.jpg'
-import carouselImage3 from '@/images/carouselImage3.png'
+import carouselImage3 from '@/images/carouselImage3.jpg'
 import carouselImage4 from '@/images/carouselImage4.jpg'
 import carouselImage5 from '@/images/carouselImage5.jpg'
-import carouselImage6 from '@/images/carouselImage6.png'
+import carouselImage6 from '@/images/carouselImage6.jpg'
+import carouselImage7 from '@/images/carouselImage7.jpg'
+import carouselImage8 from '@/images/carouselImage8.jpg'
+import carouselImage9 from '@/images/carouselImage9.jpg'
+import carouselImage0 from '@/images/carouselImage0.jpg'
 import prevButton from '@/images/prevButton.svg'
 import nextButton from '@/images/nextButton.svg'
 
@@ -128,7 +132,7 @@ const CarouselComponent = ({ className }) => {
                 <div className="flex gap-2">
                     ⭐⭐⭐⭐⭐
                 </div>
-                <h1 className="md:text-6xl text-3xl font-extrabold text-white md:text-start text-center">Our Customers Don't Play</h1>
+                <h5 className="md:text-6xl text-3xl font-extrabold text-white md:text-start text-center">Our Customers Don't Play</h5>
                 <p className="text-white md:text-xl md:text-start text-center">Some testimonials that reflect the kind of customer experience we offer - from flavor to service and delivery</p>
                 </div>
             </div>
@@ -145,18 +149,11 @@ const CarouselComponent = ({ className }) => {
             <div ref={carouselTrackRef} className="w-full relative carousel-mask flex gap-5">
             {carouselSlides.map((carousel, index) => (
                 <div key={index} className='flex-shrink-0 flex flex-col justify-between relative p-5 w-full md:w-[47%] text-white h-[550px] rounded-2xl' style={{
-                backgroundImage: `linear-gradient(to top, #1a1a1acb 12%, transparent), url(${carousel.background.src})`,
+                backgroundImage: `url(${carousel.background.src})`,
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: 'center',
                 }}>
-                <div className="w-full md:p-10 p-5 absolute h-full top-0 left-0 flex justify-between flex-col">
-                    <p className="text-lg italic my-auto">{carousel.description}</p>
-                    <div className="flex flex-col gap-3 relative z-10">
-                    <h4 className="font-bold">{carousel.name}</h4>
-                    <p className="text-sm">{carousel.location}</p>
-                    </div>
-                </div>
                 </div>
             ))}
             </div>

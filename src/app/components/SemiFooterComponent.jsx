@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { gsap } from 'gsap'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import messageBackground from '@/images/messageBackground.jpg'
+import messageBackground from '@/images/messageBackground.jpeg'
 import containerBackground from '@/images/backgroundImage.jpg'
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
@@ -65,7 +65,7 @@ const SemiFooterComponent = ({className}) => {
             />
             </div>
             <div className="flex flex-col md:gap-10 gap-4 md:my-0 my-5">
-            <h1 className='md:text-6xl text-3xl md:mt-0 mt-10 font-bold'>Delicious Deals, <br /> Just for You</h1>
+            <h5 className='md:text-6xl text-3xl md:mt-0 mt-10 font-bold'>Delicious Deals, <br /> Just for You</h5>
             <p className="text-xl">Sign up for our newsletter and receive exclusive offers on new menus</p>
             <form action="https://formsubmit.co/emmanueltech2019@gmail.com" method='POST' className='flex flex-col md:gap-10 gap-4'>
               <label htmlFor="email">

@@ -35,7 +35,7 @@ const CartComponent = ({ active = false, handleActiveClick, handleCheckoutClick 
           <div className="w-[70%] h-[0.5px] -rotate-45 bg-white absolute"></div>
         </div>
         <div className="flex justify-between items-center p-3">
-          <h1 className="text-center font-bold text-xl mx-auto">YOUR CART</h1>
+          <h5 className="text-center font-bold text-xl mx-auto">YOUR CART</h5>
           <Image src={chopLifeLogo} alt='chop life logo' width={1000} height={1000} className='md:w-40 w-20' />
         </div>
         <div className="flex flex-col justify-between gap-5 p-2 h-full">
@@ -71,7 +71,7 @@ const CartComponent = ({ active = false, handleActiveClick, handleCheckoutClick 
                     </div>
                   </div>
                 ))}
-                <h2 className="my-3 font-bold text-xl"><span className="font-lighter">Total:</span> ₦{getTotalPrice().toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</h2>
+                <p className="my-3 font-bold text-xl"><span className="font-lighter">Total:</span> ₦{getTotalPrice().toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
               </div>
             )}
           <div className="flex gap-2 items-center flex-col justify-center h-full relative">

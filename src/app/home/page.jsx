@@ -604,8 +604,8 @@ const page = () => {
         <Image src={chicken} width={1000} height={1000} alt='leaf' className='absolute movedown md:block hidden reloadmovedown4 md:top-[30%] top-[60%] right-[-45%] md:w-[20%] w-[40%]' />
         <Image ref={translateYRef6} src={chicken} width={1000} height={1000} alt='leaf' className='absolute movedown md:hidden block reloadmovedownmobile md:top-[30%] top-[65%] right-[-45%] md:w-[20%] w-[40%]' />
         <div className="flex justify-center flex-col md:gap-0 gap-3 items-center reloadscale scale-50">
-          <h1 className='md:text-[5rem] text-[3rem] font-bold text-[#ff003c] md:leading-[4rem] leading-[2rem]'>Chop Life <span className='text-[#1a1a1a]'>O...</span></h1>
-          <h2 className='md:text-[5rem] text-[2.5rem] font-bold text-[#1a1a1a]'>You Deserve it!</h2>
+          <h1 className='md:text-[3rem] text-[2rem] font-bold text-[#ff003c] md:leading-[4rem] leading-[2rem] text-center'>ChopLife <span className='text-[#1a1a1a]'>Sharwarma</span></h1>
+          <span className='md:text-[3rem] text-[2rem] text-center font-bold text-[#1a1a1a]'>Enjoy the Good Life You Deserve!</span>
           <p className="md:text-lg mb-5 md:w-[60%] text-center text-[#6e6e6e]">Delicious meals made with love and spice - from spicy noodles to juicy shawarma and crispy yam chips. Add To Cart, we deliver fast!</p>
           <Link href={`/home/menu`}>
             <button className='bg-[#ff003c] hover:scale-[1.05] transition-transform duration-200 ease-in-out rounded-3xl py-2 px-8 text-xl text-white'>View Our Menu</button>
@@ -615,7 +615,7 @@ const page = () => {
       </div>
       <div className='bg-[#fff5f7] w-full md:p-20 py-5'>
         <div className="flex flex-col gap-10">
-          <h3 className="md:text-5xl text-4xl font-bold md:pt-3 pt-10 text-center text-[#1a1a1a] mb-10">Your Favourites</h3>
+          <h2 className="md:text-5xl text-4xl font-bold md:pt-3 pt-10 text-center text-[#1a1a1a] mb-10">Your Favourite Meals</h2>
           <div className="grid md:grid-cols-3 md:gap-5">
             {productItems.slice(0, 3).map((items) => (
               <CardComponent 
@@ -638,7 +638,7 @@ const page = () => {
           </div>
         </Link>
         <div className="flex flex-col gap-10">
-          <h4 className="md:text-5xl text-3xl md:px-0 px-[60px] font-bold text-center">Hot Food, Hotter Deals</h4>
+          <h3 className="md:text-5xl text-3xl md:px-0 px-[60px] font-bold text-center">ChopLife got Hot Food and Hotter Deals</h3>
           <p className="text-xl font-light text-center">Our meals are made fresh daily with quality ingredients, generous portions, and unbeatble flavor.</p>
           <div className="grid md:grid-cols-2 gap-5" ref={rotationTriggerRef}>
             {productItems.slice(3, 5).map((item) => {
