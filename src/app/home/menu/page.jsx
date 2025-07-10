@@ -207,8 +207,11 @@ const page = () => {
                 </div>
             </div>
             <div className="grid md:grid-cols-4 w-full md:w-[90%] left-1/2 -translate-x-1/2 fixed md:top-[180px] top-[100px] z-40 items-end md:p-0 p-2">
-                <label className='w-full flex items-center gap-2'>
-                    <input ref={inputRef} onInput={handleInput} type="text" placeholder="Search..." className="border p-2 rounded-xl bg-white w-full border-none outline-none" />
+                <div className='md:block hidden'></div>
+                <div className='md:block hidden'></div>
+                <div className='md:block hidden'></div>
+                <label className='w-full flex items-center gap-2 md:me-auto'>
+                    <input ref={inputRef} onInput={handleInput} type="text" placeholder="Search Items..." className="border p-2 rounded-xl bg-white w-full border-none outline-none" />
                 </label>
             </div>
             <div ref={containerRef} className="md:p-20 p-5 md:py-32 md:pt-32 pt-72 relative backdrop-blur-xl flex flex-col md:gap-10 gap-5">
