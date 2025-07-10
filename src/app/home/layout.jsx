@@ -129,8 +129,8 @@ const layout = ({children}) => {
             <ShoppingCartIcon size={28} className='relative' />
           </div>
           <div className="w-[35px] md:hidden block relative cursor-pointer h-5" onClick={() => setNavActive(!navActive)}>
-            <div className={`absolute transition-transform duration-200 ease-in-out left-0 top-2 bg-[#1a1a1a] w-full h-[0.2px] ${navActive ? 'rotate-45 origin-center -translate-y-2' : ''}`}></div>
-            <div className={`absolute transition-transform duration-200 ease-in-out left-0 top-0 bg-[#1a1a1a] w-full h-[0.2px] ${navActive ? '-rotate-45 origin-center' : ''}`}></div>
+            <div className={`absolute transition-transform duration-200 ease-in-out left-0 top-2 bg-[#1a1a1a] w-full h-[1px] ${navActive ? 'rotate-45 origin-center -translate-y-2' : ''}`}></div>
+            <div className={`absolute transition-transform duration-200 ease-in-out left-0 top-0 bg-[#1a1a1a] w-full h-[1px] ${navActive ? '-rotate-45 origin-center' : ''}`}></div>
           </div>
         </div>
         <div className={`fixed top-0 left-0 w-full h-screen bg-[rgba(0,0,0,0.3)] backdrop-blur-md z-[99999] ${checkoutActive ? 'block' : 'hidden'}`}></div>
