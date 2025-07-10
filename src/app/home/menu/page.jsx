@@ -171,6 +171,7 @@ const page = () => {
     const handleBack = () => {
         setFilteredData([]);
         setIsSearching(false);
+        scrollToTop()
         if(inputRef.current) {
             inputRef.current.value = '';
         }
@@ -184,7 +185,7 @@ const page = () => {
                 <div ref={progressBarRef} className={`absolute h-1 bg-[#ff003c] left-0 bottom-0`} ></div>
             </div>
             <Image src={containerBackground} alt='container background' width={1000} height={1000} className='w-full h-full absolute top-0 left-0' />
-            <div className="grid fixed left-1/2 -translate-x-1/2 top-[110px] z-20 md:w-[90%] w-full md:grid-cols-4 grid-cols-2 gap-3 items-center md:my-0 my-10">
+            <div className="grid fixed left-1/2 -translate-x-1/2 top-[110px] z-20 md:w-[90%] w-full md:grid-cols-4 grid-cols-2 gap-3 items-center md:my-0 my-10 md:p-0 p-2">
                 <div onClick={() => {setActiveFilter('fullmenu'); scrollToTop()}} className={`flex justify-between px-3 cursor-pointer relative items-center ${activeFilter === 'fullmenu' ? 'bg-[#fafafa]' : 'bg-white'} rounded-3xl py-2`}>
                     <p className='mx-auto'>Full Menu</p>
                     <div className={`w-[6px] h-[6px] rounded-full absolute right-3 bg-[#ff003c] ${activeFilter === 'fullmenu' ? 'block' : 'hidden'}`}></div>
@@ -205,7 +206,7 @@ const page = () => {
                     <div className={`w-[6px] h-[6px] rounded-full absolute right-3 bg-[#ff003c] ${activeFilter === 'drinks' ? 'block' : 'hidden'}`}></div>
                 </div>
             </div>
-            <div className="grid md:grid-cols-4 w-full md:w-[90%] left-1/2 -translate-x-1/2 fixed top-[180px] z-40 items-end">
+            <div className="grid md:grid-cols-4 w-full md:w-[90%] left-1/2 -translate-x-1/2 fixed md:top-[180px] top-[100px] z-40 items-end md:p-0 p-2">
                 <label className='w-full flex items-center gap-2'>
                     <input ref={inputRef} onInput={handleInput} type="text" placeholder="Search..." className="border p-2 rounded-xl bg-white w-full border-none outline-none" />
                 </label>
