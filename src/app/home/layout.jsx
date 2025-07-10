@@ -11,6 +11,8 @@ import SemiFooterComponent from '../components/SemiFooterComponent'
 import chopLifeLogo from '@/images/chopLifeLogo.png'
 import CarouselComponent from '../components/CarouselComponent'
 import CartComponent from '../components/CartComponent'
+import Head from 'next/head'
+import Script from 'next/script'
 
 const layout = ({children}) => {
   const lenisInstance = useRef(null); // Use useRef for the Lenis instance
@@ -86,6 +88,20 @@ const layout = ({children}) => {
 
   return (
     <>
+    <Head>
+      <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-1TDTB2Y3HC"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-1TDTB2Y3HC');
+          `}
+        </Script>
+    </Head>
         <div className={`justify-between items-center gap-5 w-full md:px-20 p-3 px-5 top-0 left-0 z-40 fixed bg-[rgba(255,255,255,0.3)] backdrop-blur-md text-[#1a1a1a] ${pathname === '/home/contact/portharcourt' ? 'hidden' : 'flex'}`}>
           <Link href={`/home`} className='flex-shrink-0 md:w-[10%] md:h-[10%] w-[30%] h-[30%] '>
             <Image src={chopLifeLogo} width={1000} height={1000} alt='chop life logo' className='w-full' />

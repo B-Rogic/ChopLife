@@ -23,6 +23,8 @@ import leaf2 from '@/images/leaf2.png'
 import chicken from '@/images/chicken.png'
 import LocationCardComponent from '../components/LocationCardComponent'
 import chopLifeLogo from '@/images/chopLifeLogo.png'
+import Script from 'next/script'
+import Head from 'next/head'
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
 const page = () => {
@@ -582,6 +584,20 @@ const page = () => {
 
   return (
     <>
+        <Head>
+      <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-1TDTB2Y3HC"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-1TDTB2Y3HC');
+          `}
+        </Script>
+    </Head>
       <div className={`fixed bottom-10 md:right-20 right-5 flex gap-3 z-40 bg-white md:w-[20%] p-3 rounded-t-xl items-center ${addToCart ? 'scale-x-100' : 'scale-x-0'} transition-all duration-500 ease-in-out`}>
         <Image src={chopLifeLogo} width={1000} height={1000} className='w-20' alt='chop life logo' />
         <p className="text-sm">Item Added Successfully</p>
