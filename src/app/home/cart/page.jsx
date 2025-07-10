@@ -60,7 +60,7 @@ const page = () => {
           <div className="w-[70%] rotate-45 h-[0.5px] bg-white absolute"></div>
           <div className="w-[70%] h-[0.5px] -rotate-45 bg-white absolute"></div>
         </div>
-        <p className="text-white text-3xl text-center my-3">List of Orders</p>
+        <h1 className="text-white text-3xl text-center my-3">List of Orders</h1>
         <div className="grid md:grid-cols-2 h-[100%]">
             {cartItems.length === 0 ? (
               <div className="flex justify-center items-center h-full">

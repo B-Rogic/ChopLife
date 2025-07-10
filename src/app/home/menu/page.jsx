@@ -277,7 +277,7 @@ const page = () => {
                     <>
                         {activeFilter === 'fullmenu' ? (
                             <>
-                                <h1 className="text-2xl md:text-5xl font-bold">Pizza</h1>
+                                <h2 className="text-2xl md:text-5xl font-bold">Pizza</h2>
                                 <p className="md:text-xl text-sm">Our pizza menu serves up the perfect blend of cheesy, saucy, and crusty goodness! Choose from classics like Margherita or go bold with Naija inspired flavors like Chicken Suya and Beef Deluxe. Each pizza is handcrafted using fresh dough, premium cheese, and toppings that balance spice and savor in every bite. Whether you're hosting friends, craving a late-night slice, or planning a cozy solo feast, our pizzas are hot, hearty, and unforgettable. Want a full meal? Pair with garlic bread and soda for the ultimate pizza night. Pickup or deliver - your perfect slice is always within reach!</p>
                                 <div className="grid md:grid-cols-2 md:p-5 p-2 md:gap-3 gap-8">
                                     {productItems.slice(8, 12).map((item) => (
@@ -326,7 +326,7 @@ const page = () => {
                                         </div>
                                     ))}
                                 </div>
-                                <h1 className="text-2xl md:text-5xl font-bold">Pasta</h1>
+                                <h3 className="text-2xl md:text-5xl font-bold">Pasta</h3>
                                 <p className="md:text-xl text-sm">Our pasta dishes are more than just comfort food - they're a journey of flavor! From spicy Jollof Pasta and creamy Chicken Alfredo to Seafood Delight and Veggie Penne, each plate is a delicious blend of premium sauces, protein-packed toppings, and perfectly cooked pasta. Whether you're craving bold peppery heat or a smooth, rich, and creamy bite, our pasta bowls hit the spot. Customize with add-ons like grilled chicken or pawns, and pair with a chilled drink for the full experience. Perfect for lunch, dinner, or anytime you want to chop life in style!</p>
                                 <div className="grid md:grid-cols-2 md:gap-3 gap-8 md:p-5 p-2">
                                     {productItems.slice(12, 13).map((item) => (
@@ -375,7 +375,7 @@ const page = () => {
                                         </div>
                                     ))}
                                 </div>
-                                <h1 className="text-2xl md:text-5xl font-bold">Sides</h1>
+                                <h5 className="text-2xl md:text-5xl font-bold">Sides</h5>
                                 <p className="md:text-xl text-sm">No meal is complete without the perfect side! Our side menu offers crispy, golden yam chips, soft boli, spicy pepper chicken, juicy barbecue fish, and irresistible small chops - the ultimate companions to any main dish. Whether you're snacking or sharing, our sides are made fresh and seasoned to perfection, turning even a simple meal into something memorable. Add a portion of pepper beef, fried plantain, or crispy wings to your order and elevate your plate. Ideal for parties, picnics, or just treating yourself. Small bites, big flaor - that's how we do sides!</p>
                                 <div className="grid md:grid-cols-2 md:p-5 p-2 md:gap-3 gap-8">
                                     {productItems.slice(13, 32).map((item) => (
@@ -424,7 +424,7 @@ const page = () => {
                                         </div>
                                     ))}
                                 </div>
-                                <h1 className="text-2xl md:text-5xl font-bold">Drinks</h1>
+                                <h4 className="text-2xl md:text-5xl font-bold">Drinks</h4>
                                 <p className="md:text-xl text-sm">Quench your thirst with our range of perfectly chilled drinks! Whether you're pairing your meal with a classic soda, creamy yoghurt, fruity smoothies, or one of our signature cocktails, we've got something refreshing for every vibe. Each sip is designed to complement the rich flavors of your meal - from spicy shawarma to hearty rice dishes. Hosting a gathering? Our drink options are the perfect finishing touch. Light, fizzy, sweet, or smooth, every bottle or glass is served cold and satisfying. Stay hydrated, stay refreshed - one tasty sip at a time!</p>
                                 <div className="grid md:grid-cols-2 md:p-5 p-2 md:gap-3 gap-8">
                                     {productItems.slice(32, -1).map((item) => (
@@ -476,7 +476,7 @@ const page = () => {
                             </>
                         ) : activeFilter === 'pizza' ? (
                             <>
-                                <h1 className="text-2xl md:text-5xl font-bold">Pizza</h1>
+                                <h5 className="text-2xl md:text-5xl font-bold">Pizza</h5>
                                 <p className="md:text-xl text-sm">Our pizza menu serves up the perfect blend of cheesy, saucy, and crusty goodness! Choose from classics like Margherita or go bold with Naija inspired flavors like Chicken Suya and Beef Deluxe. Each pizza is handcrafted using fresh dough, premium cheese, and toppings that balance spice and savor in every bite. Whether you're hosting friends, craving a late-night slice, or planning a cozy solo feast, our pizzas are hot, hearty, and unforgettable. Want a full meal? Pair with garlic bread and soda for the ultimate pizza night. Pickup or deliver - your perfect slice is always within reach!</p>
                                 <div className="grid md:grid-cols-2 md:p-5 p-2 md:gap-3 gap-8">
                                     {productItems.slice(8, 12).map((item) => (
@@ -528,7 +528,7 @@ const page = () => {
                             </>
                         ) : activeFilter === 'sides' ? (
                             <>
-                                <h1 className="text-2xl md:text-5xl font-bold">Sides</h1>
+                                <h6 className="text-2xl md:text-5xl font-bold">Sides</h6>
                                 <p className="md:text-xl text-sm">No meal is complete without the perfect side! Our side menu offers crispy, golden yam chips, soft boli, spicy pepper chicken, juicy barbecue fish, and irresistible small chops - the ultimate companions to any main dish. Whether you're snacking or sharing, our sides are made fresh and seasoned to perfection, turning even a simple meal into something memorable. Add a portion of pepper beef, fried plantain, or crispy wings to your order and elevate your plate. Ideal for parties, picnics, or just treating yourself. Small bites, big flaor - that's how we do sides!</p>
                                 <div className="grid md:grid-cols-2 md:p-5 p-2 md:gap-3 gap-8">
                                     {productItems.slice(13, 32).map((item) => (
@@ -580,7 +580,7 @@ const page = () => {
                             </>
                         ) : activeFilter === 'drinks' && (
                             <>
-                                <h1 className="text-2xl md:text-5xl font-bold">Drinks</h1>
+                                <h6 className="text-2xl md:text-5xl font-bold">Drinks</h6>
                                 <p className="md:text-xl text-sm">Quench your thirst with our range of perfectly chilled drinks! Whether you're pairing your meal with a classic soda, creamy yoghurt, fruity smoothies, or one of our signature cocktails, we've got something refreshing for every vibe. Each sip is designed to complement the rich flavors of your meal - from spicy shawarma to hearty rice dishes. Hosting a gathering? Our drink options are the perfect finishing touch. Light, fizzy, sweet, or smooth, every bottle or glass is served cold and satisfying. Stay hydrated, stay refreshed - one tasty sip at a time!</p>
                                 <div className="grid md:grid-cols-2 md:p-5 p-2 md:gap-3 gap-8">
                                     {productItems.slice(32, -1).map((item) => (

@@ -23,8 +23,6 @@ import leaf2 from '@/images/leaf2.png'
 import chicken from '@/images/chicken.png'
 import LocationCardComponent from '../components/LocationCardComponent'
 import chopLifeLogo from '@/images/chopLifeLogo.png'
-import Script from 'next/script'
-import Head from 'next/head'
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
 const page = () => {
@@ -584,20 +582,6 @@ const page = () => {
 
   return (
     <>
-        <Head>
-      <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-1TDTB2Y3HC"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-1TDTB2Y3HC');
-          `}
-        </Script>
-    </Head>
       <div className={`fixed bottom-10 md:right-20 right-5 flex gap-3 z-40 bg-white md:w-[20%] p-3 rounded-t-xl items-center ${addToCart ? 'scale-x-100' : 'scale-x-0'} transition-all duration-500 ease-in-out`}>
         <Image src={chopLifeLogo} width={1000} height={1000} className='w-20' alt='chop life logo' />
         <p className="text-sm">Item Added Successfully</p>
@@ -621,7 +605,7 @@ const page = () => {
         <Image ref={translateYRef6} src={chicken} width={1000} height={1000} alt='leaf' className='absolute movedown md:hidden block reloadmovedownmobile md:top-[30%] top-[65%] right-[-45%] md:w-[20%] w-[40%]' />
         <div className="flex justify-center flex-col md:gap-0 gap-3 items-center reloadscale scale-50">
           <h1 className='md:text-[5rem] text-[3rem] font-bold text-[#ff003c] md:leading-[4rem] leading-[2rem]'>Chop Life <span className='text-[#1a1a1a]'>O...</span></h1>
-          <h1 className='md:text-[5rem] text-[2.5rem] font-bold text-[#1a1a1a]'>You Deserve it!</h1>
+          <h2 className='md:text-[5rem] text-[2.5rem] font-bold text-[#1a1a1a]'>You Deserve it!</h2>
           <p className="md:text-lg mb-5 md:w-[60%] text-center text-[#6e6e6e]">Delicious meals made with love and spice - from spicy noodles to juicy shawarma and crispy yam chips. Add To Cart, we deliver fast!</p>
           <Link href={`/home/menu`}>
             <button className='bg-[#ff003c] hover:scale-[1.05] transition-transform duration-200 ease-in-out rounded-3xl py-2 px-8 text-xl text-white'>View Our Menu</button>
@@ -631,7 +615,7 @@ const page = () => {
       </div>
       <div className='bg-[#fff5f7] w-full md:p-20 py-5'>
         <div className="flex flex-col gap-10">
-          <h1 className="md:text-5xl text-4xl font-bold md:pt-3 pt-10 text-center text-[#1a1a1a] mb-10">Your Favourites</h1>
+          <h3 className="md:text-5xl text-4xl font-bold md:pt-3 pt-10 text-center text-[#1a1a1a] mb-10">Your Favourites</h3>
           <div className="grid md:grid-cols-3 md:gap-5">
             {productItems.slice(0, 3).map((items) => (
               <CardComponent 
@@ -654,7 +638,7 @@ const page = () => {
           </div>
         </Link>
         <div className="flex flex-col gap-10">
-          <h1 className="md:text-5xl text-3xl md:px-0 px-[60px] font-bold text-center">Hot Food, Hotter Deals</h1>
+          <h4 className="md:text-5xl text-3xl md:px-0 px-[60px] font-bold text-center">Hot Food, Hotter Deals</h4>
           <p className="text-xl font-light text-center">Our meals are made fresh daily with quality ingredients, generous portions, and unbeatble flavor.</p>
           <div className="grid md:grid-cols-2 gap-5" ref={rotationTriggerRef}>
             {productItems.slice(3, 5).map((item) => {
@@ -739,7 +723,7 @@ const page = () => {
       <div className='w-full relative h-full'> 
         <Image src={containerBackground} width={1000} height={1000} alt='container background' className='absolute top-0 left-0 w-full h-full' />
         <div className="flex flex-col gap-5 relative md:p-20 p-2 backdrop-blur-lg">
-          <h1 className="md:text-5xl text-3xl font-bold text-center text-[#1a1a1a] mb-10">We'd Love to Hear From You!</h1>
+          <h4 className="md:text-5xl text-3xl font-bold text-center text-[#1a1a1a] mb-10">We'd Love to Hear From You!</h4>
           <p className="text-xl text-center">Locate our stores, check delivery zones, and pick the best option for you!</p>
           <div className="grid md:grid-cols-4 grid-cols-2 gap-5">
             <LocationCardComponent onclick={() => setLocation('portharcourt')} src={portHarcourt} locationName={`Port Harcourt`} />

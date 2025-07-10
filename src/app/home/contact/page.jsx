@@ -1,7 +1,8 @@
 'use client'
 import React, { useState } from 'react'
 import Image from 'next/image'
-import { FaTimes } from 'react-icons/fa'
+import { FaArrowRight, FaTimes } from 'react-icons/fa'
+import { CircularProgress, Box } from '@mui/material'
 import LocationCardComponent from '@/app/components/LocationCardComponent'
 import AccordionComponent from '@/app/components/AccordionComponent'
 import containerBackground from '@/images/backgroundImage.jpg'
@@ -13,6 +14,7 @@ import obioAkpor from '@/images/obioAkpor.jpeg'
 
 const page = () => {
     const [location, setLocation] = useState('')
+    const [value, setValue] = useState(0);
   return (
     <>  
         <div className={`bg-white fixed flex justify-center items-center w-full h-full z-40 top-0 left-0 ${location ? 'flex' : 'hidden'}`}> 
